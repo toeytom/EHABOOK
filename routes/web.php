@@ -16,5 +16,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+Route::get('auth/facebook', 'SocialAuthFacebookController@redirect');
+Route::get('auth/facebook/callback', 'SocialAuthFacebookController@callback');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/changepass','ChangePasswordController@index')->name('changepass');
+Route::post('/changepass','ChangePasswordController@change')->name('changepass');
