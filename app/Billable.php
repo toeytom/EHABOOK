@@ -3,8 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Cashier\Billable;
 
-class Billable extends Model
+class User extends Authenticatable
 {
-    //
+    use Billable;
 }
