@@ -39,6 +39,7 @@
                         <p></p>
                     @endif    
 
+<<<<<<< HEAD
                     @if(!empty($profile))
                         <p class="lead">{{ $profile->designation }}</p>
                     @else
@@ -47,6 +48,10 @@
                         
                         
                          
+=======
+                    You are logged in!
+                    
+>>>>>>> ee99846d39093ac91833283dc938bb9f15731081
                 </div>
                 <div class="col-md-md-8"></div>
             </div>

@@ -55,6 +55,9 @@
                                 <ul class="dropdown-menu">
                                 <li><a href ="{{ url('/profile')}}">Profile</a></li>
                                     <li>
+                                        <a href="/changepass">
+                                            Change Password
+                                        </a>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -62,6 +65,9 @@
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                        <form id="changepass-form" action="/changepass" method="GET" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
@@ -77,6 +83,11 @@
     </div>
 
     <!-- Scripts -->
+    <script
+			  src="https://code.jquery.com/jquery-3.2.1.slim.js"
+			  integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg="
+			  crossorigin="anonymous"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    @yield('javascript')
 </body>
 </html>
