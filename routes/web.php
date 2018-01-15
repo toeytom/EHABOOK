@@ -23,5 +23,10 @@ Route::get('auth/google/callback', 'SocialAuthFacebookController@callbackg');
 Route::get('auth/twitter', 'SocialAuthFacebookController@redirectt');
 Route::get('auth/twitter/callback', 'SocialAuthFacebookController@callbackt');
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/profile','ProfileController@profile');
+Route::post('/addProfile','ProfileController@addProfile');
+
 Route::get('/changepass','ChangePasswordController@index')->name('changepass');
 Route::post('/changepass','ChangePasswordController@change')->name('changepass');
+
