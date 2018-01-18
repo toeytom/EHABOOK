@@ -13,7 +13,12 @@ use Auth;
 class ProfileController extends Controller
 {
     public function profile(){
-        return view('profile.profile');
+        $user_id = Auth::user()->id;
+        $profile = DB::table('users')
+                    ->select('*')
+                    ->where(['id' => $user_id])
+                    ->first();
+        return view('profile.profile',['profile'=>$profile]);
     }
     public function index()
     {
