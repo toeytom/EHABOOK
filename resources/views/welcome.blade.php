@@ -92,4 +92,6 @@
             </div>
         </div>
     </body>
+    @section('javascript')
+    @endsection
 </html>
