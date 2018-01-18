@@ -5,7 +5,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\DB;
 use App\Profile;
+use App\User;
 use Auth;
 
 class ProfileController extends Controller
@@ -13,27 +15,44 @@ class ProfileController extends Controller
     public function profile(){
         return view('profile.profile');
     }
+    public function index()
+    {
+      
+        $user_id = Auth::user()->id;
+        $profile = DB::table('users')
+                    ->select('*')
+                    ->where(['id' => $user_id])
+                    ->first();
+    
+        return view('showprofile',['profile'=>$profile]);
+    }
     public function addProfile(Request $request){
         $this->validate($request,[
             'name' => 'required',
             'designation' => 'required',
             'profile_pic' => 'required'
         ]);
-        $profile = new Profile;
-        $profile->name = $request->input('name');
-        $profile->user_id = Auth::user()->id;
-        $profile->designation = $request->input('designation');
+       
+       
         if(Input::hasFile('profile_pic')){
             $file = Input::file('profile_pic');
-            $file-> move(public_path(). '/uploads/',
-            $file->getClientOriginalName());
-            $url = URL::to("/") . '/uploads/'. $file->getClientOriginalName();
-          
-        }
-        $profile->profile_pic = $url;
-        $profile->save();
-        return redirect('/home')->with('response','Profile Added Successfully');
+           
+            $file-> move(public_path(). '/uploads/',Auth::user()->id.$file->getClientOriginalName());
+            $newname=Auth::user()->id;
+            $newname=$newname.$file->getClientOriginalName();
+            $url = URL::to("/") . '/uploads/'.$newname ;
 
+            $profile = User::where('id',Auth::user()->id)->
+            update(['name'=>$request->input('name'),'surname'=>$request->input('designation'),'profile_pic'=>$url]);
+
+          }
+        
+      
+       
+        return redirect('/home')->with('response','Profile Added Successfully');
+        
+    }
+   
 
 
 
@@ -81,4 +100,4 @@ class ProfileController extends Controller
         
         
     }
-}
+

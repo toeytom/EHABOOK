@@ -25,6 +25,7 @@ Route::get('auth/twitter/callback', 'SocialAuthFacebookController@callbackt');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile','ProfileController@profile');
+Route::get('/showprofile','ProfileController@index');
 Route::post('/addProfile','ProfileController@addProfile');
 
 Route::get('/changepass','ChangePasswordController@index')->name('changepass');
