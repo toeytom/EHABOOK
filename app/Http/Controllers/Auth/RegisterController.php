@@ -73,6 +73,7 @@ class RegisterController extends Controller
             'tel' => $data['tel'],
             'idcard' => $data['idcard'],
             'password' => bcrypt($data['password']),
+            'profile_pic' => '',
         ]);
     }
 

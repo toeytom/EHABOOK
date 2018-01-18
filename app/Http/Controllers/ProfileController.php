@@ -41,11 +41,19 @@ class ProfileController extends Controller
        
         if(Input::hasFile('profile_pic')){
             $file = Input::file('profile_pic');
-           
-            $file-> move(public_path(). '/uploads/',Auth::user()->id.$file->getClientOriginalName());
-            $newname=Auth::user()->id;
-            $newname=$newname.$file->getClientOriginalName();
-            $url = URL::to("/") . '/uploads/'.$newname ;
+            $chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz@#$&";  
+
+            $size = strlen( $chars );
+            $str='';
+            echo "Random string =";
+     
+            for( $i = 0; $i < 100; $i++ ) {
+     
+                   $str=$str.$chars[ rand( 0, $size - 1 ) ];
+            } 
+            $file-> move(public_path(). '/uploads/',$str.$file->getClientOriginalName());
+          
+            $url = URL::to("/") . '/uploads/'.$str.$file->getClientOriginalName();
 
             $profile = User::where('id',Auth::user()->id)->
             update(['name'=>$request->input('name'),'surname'=>$request->input('designation'),'profile_pic'=>$url]);
@@ -54,7 +62,7 @@ class ProfileController extends Controller
         
       
        
-        return redirect('/home')->with('response','Profile Added Successfully');
+        return redirect('/home')->with('response','Profile Change Successfully');
         
     }
    

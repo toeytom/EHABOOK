@@ -54,7 +54,7 @@
                             <label for="profile_pic" class="col-md-4 control-label">Profile Picture</label>
 
                             <div class="col-md-6">
-                                <input id="profile_pic" type="file" class="form-control" name="profile_pic" required>
+                                <input id="profile_pic" type="file" class="form-control" name="profile_pic" accept="image/*">
 
                                 @if ($errors->has('profile_pic'))
                                     <span class="help-block">
@@ -67,7 +67,7 @@
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary btn-lg">
-                                    Add Profile
+                                    Change Profile
                                 </button>
 
                                 
