@@ -26,7 +26,7 @@
                             <label for="name" class="col-md-4 control-label">Enter Name</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="name" class="form-control" name="name" value="{{ $profile->name }}" required autofocus>
+                                <input id="name" type="name" class="form-control" name="name" value="{{ $profile->name }}"  autofocus>
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -40,7 +40,7 @@
                             <label for="designation" class="col-md-4 control-label">Surname</label>
 
                             <div class="col-md-6">
-                                <input id="designation" type="input" class="form-control" name="designation" value="{{$profile->surname}}" required>
+                                <input id="designation" type="input" class="form-control" name="designation" value="{{$profile->surname}}" >
 
                                 @if ($errors->has('designation'))
                                     <span class="help-block">
