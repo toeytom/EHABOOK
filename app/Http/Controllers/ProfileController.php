@@ -5,13 +5,31 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\DB;
 use App\Profile;
+use App\User;
 use Auth;
 
 class ProfileController extends Controller
 {
     public function profile(){
-        return view('profile.profile');
+        $user_id = Auth::user()->id;
+        $profile = DB::table('users')
+                    ->select('*')
+                    ->where(['id' => $user_id])
+                    ->first();
+        return view('profile.profile',['profile'=>$profile]);
+    }
+    public function index()
+    {
+      
+        $user_id = Auth::user()->id;
+        $profile = DB::table('users')
+                    ->select('*')
+                    ->where(['id' => $user_id])
+                    ->first();
+    
+        return view('showprofile',['profile'=>$profile]);
     }
     public function addProfile(Request $request){
         $this->validate($request,[
@@ -19,21 +37,35 @@ class ProfileController extends Controller
             'designation' => 'required',
             'profile_pic' => 'required'
         ]);
-        $profile = new Profile;
-        $profile->name = $request->input('name');
-        $profile->user_id = Auth::user()->id;
-        $profile->designation = $request->input('designation');
+       
+       
         if(Input::hasFile('profile_pic')){
             $file = Input::file('profile_pic');
-            $file-> move(public_path(). '/uploads/',
-            $file->getClientOriginalName());
-            $url = URL::to("/") . '/uploads/'. $file->getClientOriginalName();
-          
-        }
-        $profile->profile_pic = $url;
-        $profile->save();
-        return redirect('/home')->with('response','Profile Added Successfully');
+            $chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz@#$&";  
 
+            $size = strlen( $chars );
+            $str='';
+            echo "Random string =";
+     
+            for( $i = 0; $i < 100; $i++ ) {
+     
+                   $str=$str.$chars[ rand( 0, $size - 1 ) ];
+            } 
+            $file-> move(public_path(). '/uploads/',$str.$file->getClientOriginalName());
+          
+            $url = URL::to("/") . '/uploads/'.$str.$file->getClientOriginalName();
+
+            $profile = User::where('id',Auth::user()->id)->
+            update(['name'=>$request->input('name'),'surname'=>$request->input('designation'),'profile_pic'=>$url]);
+
+          }
+        
+      
+       
+        return redirect('/home')->with('response','Profile Change Successfully');
+        
+    }
+   
 
 
 
@@ -81,4 +113,4 @@ class ProfileController extends Controller
         
         
     }
-}
+

@@ -24,26 +24,8 @@
                 <div class="panel-heading">Dashboard</div>
                 
                 <div class="panel-body">
-                    <div class="col-md-4">
-                    @if(!empty($profile))
-                        <img src="{{ $profile->profile_pic }}"
-                        class= "avatar" alt="">
-                    @else
-                        <img src="{{ url('images/avatar.png') }}"
-                        class="avatar" alt="">
-                    @endif    
-
-                    @if(!empty($profile))
-                        <p class="lead">{{ $profile->name }}</p>
-                    @else
-                        <p></p>
-                    @endif    
-
-                    @if(!empty($profile))
-                        <p class="lead">{{ $profile->designation }}</p>
-                    @else
-                        <p></p>
-                    @endif    
+                   
+       
                         
                         
                          
@@ -58,4 +40,6 @@
         </div>
     </div>
 </div>
+@endsection
+@section('javascript')
 @endsection

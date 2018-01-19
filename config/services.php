@@ -50,5 +50,10 @@ return [
         'client_secret' => env('GG_SECRET'), // Your GitHub Client Secret
         'redirect' => env('GG_CALLBACK'),
     ],
+    'stripe' => [
+        'model'  => App\User::class,
+        'key' => env('STRIPE_KEY'),
+        'secret' => env('STRIPE_SECRET'),
+    ],
 
 ];

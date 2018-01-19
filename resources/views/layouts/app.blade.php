@@ -72,7 +72,8 @@
                                 </a>
 
                                 <ul class="dropdown-menu">
-                                <li><a href ="{{ url('/profile')}}">Profile</a></li>
+                                        <li><a href ="{{ url('/showprofile')}}">My Profile</a></li>
+                                <li><a href ="{{ url('/profile')}}">Change Profile</a></li>
                                     <li>
                                         <a href="/changepass">
                                             Change Password

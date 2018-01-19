@@ -9,7 +9,7 @@ class SocialTwitterAccountService
 {
     public function createOrGetUser(ProviderUser $providerUser)
     {
-        $account = SocialFacebookAccount::whereProvider('google')
+        $account = SocialFacebookAccount::whereProvider('twitter')
             ->whereProviderUserId($providerUser->getId())
             ->first();
 
@@ -33,6 +33,7 @@ class SocialTwitterAccountService
                     'password' => md5(rand(1,10000)),
                     'tel' => '',
                     'idcard' => '',
+                    'profile_pic'=> $providerUser->getAvatar(),
                    
                 ]);
             }

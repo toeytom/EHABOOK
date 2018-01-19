@@ -26,7 +26,7 @@
                             <label for="name" class="col-md-4 control-label">Enter Name</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="name" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                <input id="name" type="name" class="form-control" name="name" value="{{ $profile->name }}" required autofocus>
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -37,10 +37,10 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('designation') ? ' has-error' : '' }}">
-                            <label for="designation" class="col-md-4 control-label">Designation</label>
+                            <label for="designation" class="col-md-4 control-label">Surname</label>
 
                             <div class="col-md-6">
-                                <input id="designation" type="input" class="form-control" name="designation" required>
+                                <input id="designation" type="input" class="form-control" name="designation" value="{{$profile->surname}}" required>
 
                                 @if ($errors->has('designation'))
                                     <span class="help-block">
@@ -54,7 +54,7 @@
                             <label for="profile_pic" class="col-md-4 control-label">Profile Picture</label>
 
                             <div class="col-md-6">
-                                <input id="profile_pic" type="file" class="form-control" name="profile_pic" required>
+                                <input id="profile_pic" type="file" class="form-control" name="profile_pic" accept="image/*">
 
                                 @if ($errors->has('profile_pic'))
                                     <span class="help-block">
@@ -67,7 +67,7 @@
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary btn-lg">
-                                    Add Profile
+                                    Change Profile
                                 </button>
 
                                 
