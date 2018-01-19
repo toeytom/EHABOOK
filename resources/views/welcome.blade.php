@@ -42,8 +42,6 @@
 @endsection
 
 
-<<<<<<< HEAD
-=======
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
@@ -57,4 +55,4 @@
     @section('javascript')
     @endsection
 </html>
->>>>>>> c8cf9a8ab5322cc772e5b72a58432bf2f082be29
+
