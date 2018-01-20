@@ -8,6 +8,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateSocialFacebookAccountsTable extends Migration
 {
+    // test kendo
     /**
      * Run the migrations.
      *
