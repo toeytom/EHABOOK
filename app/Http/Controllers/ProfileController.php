@@ -41,7 +41,7 @@ class ProfileController extends Controller
        
         if(Input::hasFile('profile_pic')){
             $file = Input::file('profile_pic');
-            $chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz@#$&";  
+            $chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";  
 
             $size = strlen( $chars );
             $str='';

@@ -86,7 +86,8 @@
               <li class="nav-item dropdown active" >
                    
                 <a class="nav-link dropdown-toggle active " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <img src="{{ url('uploads/26220700_1518577464846365_744389388789989542_o.jpg') }}"
+                  
+                  <img src="{{ Auth::user()->profile_pic}}"
                   class="rounded-circle" alt="Cinque Terre" height="35" width="35" > {{ Auth::user()->name }} {{ Auth::user()->surname }} 
                 </a>
                 <div class="dropdown-menu" style="background-color: rgba(255, 255, 255, 0.7)!important" aria-labelledby="navbarDropdown">
