@@ -27,9 +27,9 @@
                     <div class="col-md-4">
                     @if(!empty($profile))
                         <img src="{{ $profile->profile_pic }}"
-                        class= "avatar" height="100" width="100" alt="">
+                        class= "avatar" height="50" width="50" alt="">
                     @else
-                        <img src="{{ url('images/avatar.png') }}"
+                        <img src="{{ url('images/1.png') }}"
                         class="avatar" alt="">
                     @endif    
 

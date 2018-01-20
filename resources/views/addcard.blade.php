@@ -20,7 +20,7 @@
                 @endif
                 <div class="panel-heading">Paywith Stripe</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" id="payment-form" role="form" action="/stripe" >
+                    <form class="form-horizontal" method="POST" id="payment-form" role="form" action="/addcard" >
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('card_no') ? ' has-error' : '' }}">
                             <label for="card_no" class="col-md-4 control-label">Card No</label>

@@ -33,6 +33,9 @@ Route::post('/changepass','ChangePasswordController@change')->name('changepass')
 
 Route::get('/stripe','StripeController@payWithStripe')->name('stripform');
 Route::post('/stripe', 'StripeController@postPaymentWithStripe')->name('paywithstripe');
+Route::get('/addcard', 'StripeController@addcard')->name('addcard');
+Route::post('/addcard', 'StripeController@addcreditcard')->name('addcreditcard');
+
 
 Route::get('/read','ReadController@index');
 

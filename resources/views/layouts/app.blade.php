@@ -11,94 +11,73 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+   
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-<body>
+<body background="1.jpg">
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
+        
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top "  style="background-color: rgba(255, 255, 255, 0.7)!important">
+            <img src="logo.png"
+            class= "logo" height="50" width="150" alt="" href="/changepass">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/changepass"> Change Password</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+            </ul>
+        </div>
+            <ul  class="navbar-nav mr-auto">
+                @guest
+                <li class="nav-item  active">
+                    <a class="nav-link" href="{{ route('login') }}">Login <span class="sr-only">(current)</span></a>
+                  </li>
+              
+                <li  class="nav-item  active "><a class="nav-link" href="{{ route('register') }}">Register</a></li>
+              @else
+              <li class="nav-item dropdown" >
+                    <img src="{{ url('uploads/Ybe1#VKUtZ9n&gvd2io2x2evDw4BCqScKmDMoe9Gpre9HN$cdvquQTOWOYcCtLmS#ukSU3c5g0g1iu6wUl4GJDZxZOLHfnIdRcBCindex.png') }}"
+                    class="avatar" alt="" height="100" width="100" >
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ Auth::user()->name }} {{ Auth::user()->surname }} 
+                </a>
+                <div class="dropdown-menu" style="background-color: rgba(255, 255, 255, 0.7)!important" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ url('/showprofile')}}">My Profile</a>
+                        <a class="dropdown-item"href ="{{ url('/profile')}}">Change Profile</a>
+                        <a class="dropdown-item" href="/changepass"> Change Password</a>
+                    <div class="dropdown-divider"></div>
+                 
+                  <a class="dropdown-item" href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();">
+                  Logout
+              </a>
                 </div>
-
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                        &nbsp;
-                        &nbsp;
-                        &nbsp;
-                        &nbsp;
-                        &nbsp;
-                        &nbsp;
-                        &nbsp;
-                        &nbsp;
-                        
-                    </ul>
-                   
-                    <form class="navbar-form navbar-left" action="##">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                        <button type="button" class="btn btn-default btn-sm">
-                        <span class="glyphicon glyphicon-search"></span> Search 
-                      </button>
-                    </form>
-                       
-                    
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                        @else
-                        
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->name }} {{ Auth::user()->surname }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu">
-                                        <li><a href ="{{ url('/showprofile')}}">My Profile</a></li>
-                                <li><a href ="{{ url('/profile')}}">Change Profile</a></li>
-                                    <li>
-                                        <a href="/changepass">
-                                            Change Password
-                                        </a>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                        <form id="changepass-form" action="/changepass" method="GET" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
+              </li>
+              @endguest
+                </ul>
+            
+          </nav>
+          
         @yield('content')
     </div>
 
@@ -106,7 +85,9 @@
     <script
 			  src="https://code.jquery.com/jquery-3.2.1.slim.js"
 			  integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg="
-			  crossorigin="anonymous"></script>
+              crossorigin="anonymous"></script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     @yield('javascript')
 </body>

@@ -21,6 +21,7 @@ class CreateSocialFacebookAccountsTable extends Migration
           $table->string('provider_user_id');
           $table->string('provider');
           $table->timestamps();
+          
         });
     }
 
