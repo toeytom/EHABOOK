@@ -36,7 +36,9 @@ Route::post('/stripe', 'StripeController@postPaymentWithStripe')->name('paywiths
 Route::get('/addcard', 'StripeController@addcard')->name('addcard');
 Route::post('/addcard', 'StripeController@addcreditcard')->name('addcreditcard');
 
-
+Route::get('/test',function(){
+    return view('/auth/passwords/test');
+});
 Route::get('/read','ReadController@index');
 
 

@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/welcome';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -55,6 +55,7 @@ class RegisterController extends Controller
             'tel' => 'required|string|max:255',
             'idcard' => 'required|string|max:255',
             'password' => 'required|string|min:6|confirmed',
+           
         ]);
     }
 
@@ -66,6 +67,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        if(!$data['profile_pic']){
+            $profile='http://localhost:8000/images/avatar.png';
+            }
+            else
+            {
+                $profile = $data['profile_pic'];
+            }
         return User::create([
             'email' => $data['email'],
             'name' => $data['name'],
@@ -73,7 +81,8 @@ class RegisterController extends Controller
             'tel' => $data['tel'],
             'idcard' => $data['idcard'],
             'password' => bcrypt($data['password']),
-            'profile_pic' => '',
+            'profile_pic' => $profile,
+           
         ]);
     }
 

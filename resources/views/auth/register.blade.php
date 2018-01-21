@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
+    <div class="row justify-content-end">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
@@ -98,6 +98,19 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('profile_pic') ? ' has-error' : '' }}">
+                            <label for="profile_pic" class="col-md-4 control-label">Profile Picture</label>
+
+                            <div class="col-md-6">
+                                <input id="profile_pic" type="file" class="form-control" name="profile_pic" accept="image/*">
+
+                                @if ($errors->has('profile_pic'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('profile_pic') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
 
