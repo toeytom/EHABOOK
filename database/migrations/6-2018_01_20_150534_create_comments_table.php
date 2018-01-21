@@ -15,11 +15,12 @@ class CreateCommentsTable extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('comment_id');
-            $table->string('comment_taxt');
-            $table->dateTime('date_of_comment');
-            $table->timestamps();
-            $table->foreign('user_user_id')->references('user_id')->on('users');
-            $table->foreign('book_book_id')->references('book_id')->on('books');
+            $table->string('comment_taxt', 45);
+            $table->dateTime('comment_dateTime');
+            $table->integer('user_id')->unsigned();
+            $table->integer('book_id')->unsigned();
+            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
+            $table->foreign('book_id')->references('book_id')->on('books')->onDelete('cascade');
         });
     }
 

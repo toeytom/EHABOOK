@@ -15,18 +15,18 @@ class CreateBooksTable extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->increments('book_id');
-            $table->string('book_name');
-            $table->string('book_cover');
-            $table->string('book_category');
-            $table->decimal('book_price',5,2);
+            $table->string('book_name', 45);
+            $table->string('book_cover', 45);
+            $table->string('book_category', 45);
+            $table->decimal('book_price', 7, 2);
             $table->integer('book_page_per_book');
-            $table->float('book_size',5,2);
-            $table->float('book_score',5,2);
-            $table->string('book_demo');
-            $table->string('book_description');
-            $table->string('book_address');
-            $table->timestamps();
-            $table->foreign('user_user_id')->references('user_id')->on('users');
+            $table->string('book_size');
+            $table->float('book_score' , 3, 2);
+            $table->string('book_demo', 45);
+            $table->string('book_description', 45);
+            $table->string('book_address', 45);
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
         });
     }
 
