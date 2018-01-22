@@ -24,7 +24,7 @@ class CreateBillsTable extends Migration
             $table->decimal('bill_price', 7, 2);
             $table->integer('book_id')->unsigned();
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
              $table->foreign('book_id')->references('book_id')->on('books')->onDelete('cascade');
         });
     }

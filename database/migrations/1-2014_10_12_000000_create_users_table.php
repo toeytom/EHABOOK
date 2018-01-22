@@ -16,20 +16,19 @@ class CreateUsersTable extends Migration
     {
        
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('user_id');
-            $table->string('user_email')->unique();
+            $table->increments('id');
+            $table->string('email')->unique();
             $table->string('user_name');
             $table->string('user_ava');
             $table->string('user_phone');
             $table->string('user_level');
-            $table->string('user_password');
-            $table->string('user_card_name');
-            $table->string('user_card_id');
-            $table->string('user_card_cvv');
-            $table->string('user_card_exp_month');
-            $table->string('user_card_exp_year');
-            $table->integer('social_id')->unsigned();
-           $table->foreign('social_id')->references('id')->on('social_facebook_accounts');
+            $table->string('password');
+            $table->string('user_card_name')->nullable();
+            $table->string('user_card_id')->nullable();
+            $table->string('user_card_cvv')->nullable();
+            $table->string('user_card_exp_month')->nullable();
+            $table->string('user_card_exp_year')->nullable();
+           
             $table->rememberToken();
             $table->timestamps();
           

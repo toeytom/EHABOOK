@@ -51,9 +51,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'email' => 'required|string|email|max:255|unique:users',
             'name' => 'required|string|max:255',
-            'surname' => 'required|string|max:255',
             'tel' => 'required|string|max:255',
-            'idcard' => 'required|string|max:255',
             'password' => 'required|string|min:6|confirmed',
            
         ]);
@@ -68,7 +66,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         if(!$data['profile_pic']){
-            $profile='http://localhost:8000/images/avatar.png';
+            $profile='/images/avatar.png';
             }
             else
             {
@@ -76,12 +74,12 @@ class RegisterController extends Controller
             }
         return User::create([
             'email' => $data['email'],
-            'name' => $data['name'],
-            'surname' => $data['surname'],
-            'tel' => $data['tel'],
-            'idcard' => $data['idcard'],
+            'user_name' => $data['name'],
+            'user_ava' => $profile,
+            'user_phone' => $data['tel'],
+            'user_level'=>'1',
             'password' => bcrypt($data['password']),
-            'profile_pic' => $profile,
+            
            
         ]);
     }
