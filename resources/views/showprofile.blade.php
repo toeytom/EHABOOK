@@ -24,7 +24,7 @@
                         <img src="{{ $profile->profile_pic }}"
                         class= "rounded-circle" height="50" width="50" alt="">
                     @else
-                        <img src="{{ url('images/1.png') }}"
+                        <img src="{{ url('images/avatar.png') }}"
                         class="rounded-circle" alt="">
                     @endif    
 

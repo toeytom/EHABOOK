@@ -1,10 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<div style="margin-left:345px; width:100%;">
+
+
 <div class="container"> 
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+
+<div class="container">
+    <div class="row justify-content-end">
+        <div class="col-md-8 col-md-auto">
+
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
 
@@ -55,36 +61,34 @@
                                 <button type="submit" class="btn btn-primary">
                                     Login
                                 </button>
-
+                                
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>
                             </div>
                         </div>
                         <br />
-                        <p style="margin-left:265px">OR</p>
+                        <p style="margin-left:150px">OR</p>
                         <br />
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                              <a href="{{url('/auth/facebook')}}" class="btn btn-primary">Login with Facebook</a>
+                              <a href="{{url('/auth/facebook')}}" ><img src="img/fb_but.png"
+                                 alt="Cinque Terre" height="35" width="35" ></a>
+                               
+                              <a href="{{url('/auth/google')}}" ><img src="img/google_but.png"
+                                alt="Cinque Terre" height="35" width="35" ></a>
+                              <a href="{{url('/auth/twitter')}}" ><img src="img/twitter_but.jpg"
+                                alt="Cinque Terre" height="35" width="35" ></a>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                              <a href="{{url('/auth/google')}}" class="btn btn-danger">Login with Google</a>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                              <a href="{{url('/auth/twitter')}}" class="btn btn-outline-primary">Login with Twitter</a>
-                            </div>
-                        </div>
+                       
+                       
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</div>
+
 
 @endsection

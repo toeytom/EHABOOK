@@ -4,26 +4,20 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBillsTable extends Migration
+class CreatePromotionsTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
-     * 
      */
-
     public function up()
     {
-        Schema::table('users', function ($table) {
-           
-        });
-        
-        Schema::create('bills', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id');
-     
-            $table->timestamps();
+        Schema::create('promotions', function (Blueprint $table) {
+            $table->increments('pro_id');
+            $table->double('pro_discount', 3, 2);
+            $table->dateTime('date_of_start');
+            $table->dateTime('date_of_stop');
         });
     }
 
@@ -34,6 +28,6 @@ class CreateBillsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bills');
+        Schema::dropIfExists('promotions');
     }
 }

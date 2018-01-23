@@ -11,20 +11,29 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
+    
     public function up()
     {
+       
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('email')->unique();
-            $table->string('name');
-            $table->string('surname');
-            $table->string('profile_pic');
-            $table->string('tel');
-            $table->string('idcard');
+            $table->string('user_name');
+            $table->string('user_ava');
+            $table->string('user_phone');
+            $table->string('user_level');
             $table->string('password');
+            $table->string('user_card_name')->nullable();
+            $table->string('user_card_id')->nullable();
+            $table->string('user_card_cvv')->nullable();
+            $table->string('user_card_exp_month')->nullable();
+            $table->string('user_card_exp_year')->nullable();
+           
             $table->rememberToken();
             $table->timestamps();
+          
         });
+        
     }
 
     /**

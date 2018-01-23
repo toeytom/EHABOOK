@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div style="margin-left:345px; width:100%;">
+
 <div class="container">
-    <div class="row">
+    <div class="row justify-content-end">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
@@ -40,19 +40,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('surname') ? ' has-error' : '' }}">
-                            <label for="surname" class="col-md-4 control-label">Surname</label>
 
-                            <div class="col-md-6">
-                                <input id="surname" type="text" class="form-control" name="surname" value="{{ old('surname') }}" required autofocus>
-
-                                @if ($errors->has('surname'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('surname') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
                         <div class="form-group{{ $errors->has('tel') ? ' has-error' : '' }}">
                             <label for="tel" class="col-md-4 control-label">Tel</label>
 
@@ -66,27 +54,14 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('idcard') ? ' has-error' : '' }}">
-                            <label for="idcard" class="col-md-4 control-label">ID Card</label>
-
-                            <div class="col-md-6">
-                                <input id="idcard" type="text" class="form-control" name="idcard" value="{{ old('idcard') }}" required autofocus>
-
-                                @if ($errors->has('idcard'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('idcard') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
+                        
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password" required>
 
-                                @if ($errors->has('password'))
+                                @if ($errors->has('user-password'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
@@ -99,6 +74,19 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('profile_pic') ? ' has-error' : '' }}">
+                            <label for="profile_pic" class="col-md-4 control-label">Profile Picture</label>
+
+                            <div class="col-md-6">
+                                <input id="profile_pic" type="file" class="form-control" name="profile_pic" accept="image/*">
+
+                                @if ($errors->has('profile_pic'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('profile_pic') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
 
@@ -115,5 +103,5 @@
         </div>
     </div>
 </div>
-</div>
+
 @endsection
