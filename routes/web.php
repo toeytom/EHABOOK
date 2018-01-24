@@ -40,5 +40,7 @@ Route::get('/test',function(){
     return view('/auth/passwords/test');
 });
 Route::get('/read','ReadController@index');
+Route::get('/addbook','BookController@addbook')->name('addbook');
+Route::post('/addcard', 'BookController@addbooks')->name('addbook');
 
 
