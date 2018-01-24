@@ -18,7 +18,6 @@ class CreateSocialFacebookAccountsTable extends Migration
     {
         Schema::create('social_facebook_accounts', function (Blueprint $table) {
           $table->increments('id');
-          $table->integer('social_id');
           $table->string('provider_user_id');
           $table->string('provider');
           $table->integer('user_id')->unsigned();
