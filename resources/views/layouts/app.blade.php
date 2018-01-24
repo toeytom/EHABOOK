@@ -10,7 +10,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Styles -->
+    <!-- Stylesd -->
     <style>
     body { 
       background: url('{{asset("bg.png")}}') no-repeat center center fixed; 
@@ -18,6 +18,7 @@
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
+    
     }
     
    
