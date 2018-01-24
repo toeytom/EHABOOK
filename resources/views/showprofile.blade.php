@@ -21,7 +21,7 @@
                 <div class="panel-body">
                     <div class="col-md-4">
                     @if(!empty($profile))
-                        <img src="{{ $profile->profile_pic }}"
+                        <img src="{{ $profile->user_ava}}"
                         class= "rounded-circle" height="50" width="50" alt="">
                     @else
                         <img src="{{ url('images/avatar.png') }}"
@@ -29,16 +29,11 @@
                     @endif    
 
                     @if(!empty($profile))
-                        <p class="lead">{{ $profile->name }}</p>
+                        <p class="lead">{{ $profile->user_name }}</p>
                     @else
                         <p></p>
                     @endif    
-
-                    @if(!empty($profile))
-                        <p class="lead">{{ $profile->surname }}</p>
-                    @else
-                        <p></p>
-                    @endif    
+  
                         
                         
                          
