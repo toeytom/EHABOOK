@@ -18,7 +18,7 @@ class ProfileController extends Controller
                     ->select('*')
                     ->where(['id' => $user_id])
                     ->first();
-        return view('profile.profile',['profile'=>$profile]);
+        return view('user_ava',['profile'=>$profile]);
     }
     public function index()
     {
@@ -35,7 +35,7 @@ class ProfileController extends Controller
         $this->validate($request,[
             'name' => 'required',
             'designation' => 'required',
-            'profile_pic' => 'required'
+            'user_ava' => 'required'
         ]);
        
        
