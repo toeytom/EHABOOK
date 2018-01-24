@@ -10,7 +10,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Styles -->
+    <!-- Stylesd -->
     <style>
     body { 
       background: url('{{asset("bg.png")}}') no-repeat center center fixed; 
