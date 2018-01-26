@@ -82,7 +82,7 @@ class BookController extends Controller
         
       
        
-        return redirect('/addbook')->with('response','Add  Book Successfully');
+        return redirect('/home')->with('response','Add  Book Successfully');
         
     }
    

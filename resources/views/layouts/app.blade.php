@@ -20,7 +20,49 @@
       background-size: cover;
     
     }
+    .main-login{
+      background-color: #fff;
+       /* shadows and rounded borders */
+       -moz-border-radius: 2px;
+       -webkit-border-radius: 2px;
+       border-radius: 2px;
+       -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+       -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+       box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+   
+   }
+   .main-center{
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+ 	max-width: 50%;
+    padding: 40px 40px;
     
+
+}
+.outlinebox {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid gray;
+
+}
+    
+.btn-info-change{
+  background-color: #00aced !important;
+  border-color: #00aced!important;
+  color: #ffffff!important;
+}
+.btn-primary-change{
+  background-color: #0063aa !important;
+  border-color: #0063aa!important;
+  color: #ffffff!important;
+  
+}
+.btn-gg-change{
+ 
+  background-color: #ea002a !important;
+  border-color: #ea002a!important;
+  color: #ffffff!important;
+}
    
     
   </style>

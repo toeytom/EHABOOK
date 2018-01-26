@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<form class="form-horizontal" method="POST" id="payment-form" role="form" action="/addbook" enctype="multipart/form-data">
+<form class="form-horizontal" method="POST" id="addbook" role="form" action="/addbook" enctype="multipart/form-data">
 ชื่อหนังสือ<input id="name" type="text" class="form-controll" name="name"  required autofocus>
 <div>
 </div>

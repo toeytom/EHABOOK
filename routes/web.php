@@ -41,6 +41,6 @@ Route::get('/test',function(){
 });
 Route::get('/read','ReadController@index');
 Route::get('/addbook','BookController@addbook')->name('addbook');
-Route::post('/addcard', 'BookController@addbooks')->name('addbook');
+Route::post('/addbook', 'BookController@addbooks')->name('addbook');
 
 
