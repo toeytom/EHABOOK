@@ -81,7 +81,7 @@
 <body >
     <div id="app">
         
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top "  style="background-color: rgba(255, 255, 255, 0.2)!important">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top "  style="background-color: rgba(255, 255, 255, 0.9)!important">
             <a href="/"><img src="{{asset("logo.png")}}"
             class= "logo" height="50" width="150" alt="" ></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
