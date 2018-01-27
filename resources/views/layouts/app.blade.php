@@ -7,10 +7,13 @@
     <link rel="icon" href="logo1.png" type="image/gif" sizes="16x16">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+   
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Stylesd -->
+    
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<link rel="stylesheet" href="fontawesome-stars.css">
     <style>
     body { 
       background: url('{{asset("bg.jpg")}}') no-repeat center center fixed; 
@@ -224,8 +227,7 @@
                     <div class="dropdown-divider"></div>
                  
                    
-             
-                                                      
+                                                        
                 </div>
               </li>
               @endguest
@@ -239,10 +241,12 @@
     </div>
 
     <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
     <script
 			  src="https://code.jquery.com/jquery-3.2.1.slim.js"
 			  integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg="
               crossorigin="anonymous"></script>
+              <script src="jquery.rateyo.js"></script>
               <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="{{ asset('js/app.js') }}"></script>

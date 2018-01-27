@@ -16,13 +16,13 @@ class BookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         
-        $book_id = 3;
+        $book_id = $request->input('book');
         $book_name = Books::where(['book_id' => $book_id])
                     ->first();
-        $comment_id = 1;
+        $comment_id = $request->input('book');
         $comments =Comments::where(['comment_id' => $comment_id])->get();
         foreach($comments as $comment) {
             $comment->user = DB::table('users')->find($comment->user_id);

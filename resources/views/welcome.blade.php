@@ -33,15 +33,28 @@
    
    <div class="col-md-2">
     
-   
+    <form class="form-horizontal" method="GET" action="/detail">
+       <input type="hidden" name="book" id="book" value="{{$book->book_id}}">
+      
       <img  src="{{$book->book_cover}}" alt="..." width="150" height="190">
     
-      	
-        <h3>{{$book->book_name}}</h3>
-        <p>{{$book->book_rate}}</p>
-        <p>{{$book->book_price}}
-        </p>
-
+     
+        <h4>{{$book->book_name}}</h4>
+        <p>{{$book->book_score}}</p>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        @for($i=0;$i<5;$i++)
+        @if($i<4)
+        <span class="fa fa-star"></span>
+        @else
+       
+        <span class="fa fa-star checked"></span>
+        @endif
+       @endfor
+       <p></p>
+       <button type="submit" value="{{$book->book_id}}"class="btn btn-success">{{$book->book_price}}</button> 
+<p></p>
+    </form>
 </div>
 
   @endforeach
@@ -57,7 +70,20 @@
 
 @endsection
 @section('javascript')
-
+<script>
+  
+    $(function () {
+ 
+      $("#rateYo").rateYo({
+        normalFill: "#A0A0A0"
+      });
+     
+    });
+    var normalFill = $("#rateYo").rateYo("option", "normalFill"); //returns "#A0A0A0"
+ 
+    // Setter
+    $("#rateYo").rateYo("option", "normalFill", "#B0B0B0"); //returns a jQuery Element
+</script>
 @endsection
 
 
