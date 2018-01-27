@@ -13,13 +13,14 @@
     <!-- Stylesd -->
     <style>
     body { 
-      background: url('{{asset("bg.png")}}') no-repeat center center fixed; 
+      background: url('{{asset("bg.jpg")}}') no-repeat center center fixed; 
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
     
     }
+<<<<<<< HEAD
 
     h3 {
       color:darkgrey;
@@ -86,7 +87,60 @@
       left:2px;
   }
   
+=======
+    .main-login{
+      background-color: #fff;
+       /* shadows and rounded borders */
+       -moz-border-radius: 2px;
+       -webkit-border-radius: 2px;
+       border-radius: 2px;
+       -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+       -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+       box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+   
+   }
+   .main-center{
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+ 	max-width: 50%;
+    padding: 40px 40px;
     
+
+}
+.outlinebox {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid gray;
+
+}
+>>>>>>> ba831ed7d6f95b59d55021a4b46d367daebb5c64
+    
+.btn-info-change{
+  background-color: #00aced !important;
+  border-color: #00aced!important;
+  color: #ffffff!important;
+}
+.btn-primary-change{
+  background-color: #0063aa !important;
+  border-color: #0063aa!important;
+  color: #ffffff!important;
+  
+}
+.btn-gg-change{
+ 
+  background-color: #ea002a !important;
+  border-color: #ea002a!important;
+  color: #ffffff!important;
+}
+.btn-profile-change{
+ 
+  background-color: #1aabee !important;
+  border-color: #1aabee!important;
+  color: #ffffff!important;
+ 
+ 
+ 
+}
    
     
   </style>
@@ -96,7 +150,7 @@
 <body >
     <div id="app">
         
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top "  style="background-color: rgba(255, 255, 255, 0.1)!important">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top "  style="background-color: rgba(255, 255, 255, 0.9)!important">
             <a href="/"><img src="{{asset("logo.png")}}"
             class= "logo" height="50" width="150" alt="" ></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -123,8 +177,7 @@
                     <a class="dropdown-item" href="#">Something else here</a>
                   </div>
                 </li>
-                  @guest
-                  @else
+               
                   <li class="nav-item active ">
                     <a class="nav-link" href="/changepass">หนังสือของฉัน</a>
                   </li>
@@ -132,7 +185,7 @@
                     <a class="nav-link" href="/changepass">ผลงานของฉัน</a>
                   </li>
                   
-                  @endguest
+               
                   <li class="nav-item active ">
                     <a class="nav-link" href="/changepass">User Guide</a>
                   </li>
@@ -153,25 +206,27 @@
               <li class="nav-item dropdown active" >
                    
                 <a class="nav-link dropdown-toggle active " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  
+                    {{ Auth::user()->user_name }} 
                   <img src="{{ Auth::user()->user_ava}}"
-                  class="rounded-circle" alt="Cinque Terre" height="35" width="35" > {{ Auth::user()->user_name }} 
+                  class="rounded-circle" alt="Cinque Terre" height="35" width="35" > 
                 </a>
                 <div class="dropdown-menu" style="background-color: rgba(255, 255, 255, 0.7)!important" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ url('/showprofile')}}">My Profile</a>
-                        <a class="dropdown-item"href ="{{ url('/profile')}}">Change Profile</a>
-                        <a class="dropdown-item" href="/changepass"> Change Password</a>
+                        <a class="dropdown-item" href="#" > <img src="{{ Auth::user()->user_ava}}"
+                          class="rounded-circle" alt="Cinque Terre" height="150" width="150" ></a>
+                          <center><a ><button class="btn btn-profile-change btn-block">แก้ไขโปรไฟล์</button></a></center> 
+                          <p></p>
+                          <a  href="{{ route('logout') }}"
+                          onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();"><button class="btn btn-danger  btn-block">ออกจากระบบ</button></a>
+                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                                      {{ csrf_field() }}
+                          </form>
+                        
                     <div class="dropdown-divider"></div>
                  
-                  <a class="dropdown-item" href="{{ route('logout') }}"
-                  onclick="event.preventDefault();
-                           document.getElementById('logout-form').submit();">
-                  Logout
-              </a>
-              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                -                                            {{ csrf_field() }}
-                -                                        </form>
-                -                                       
+                   
+             
+                                                      
                 </div>
               </li>
               @endguest

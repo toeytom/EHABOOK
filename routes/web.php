@@ -43,11 +43,16 @@ Route::get('/test',function(){
     return view('/auth/passwords/test');
 });
 Route::get('/read','ReadController@index');
+
 /*
 Route::get('/detail', function () {
     return view('bookDetail');
 });
 */
 Route::get('/detail','BookController@index');
+
+Route::get('/addbook','BookController@addbook')->name('addbook');
+Route::post('/addbook', 'BookController@addbooks')->name('addbook');
+
 
 

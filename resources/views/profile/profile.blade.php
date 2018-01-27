@@ -26,7 +26,7 @@
                             <label for="name" class="col-md-4 control-label">Enter Name</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="name" class="form-control" name="name" value="{{ $profile->name }}"  autofocus>
+                                <input id="name" type="name" class="form-control" name="name" value="{{ $profile->user_name }}"  autofocus>
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -36,19 +36,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('designation') ? ' has-error' : '' }}">
-                            <label for="designation" class="col-md-4 control-label">Surname</label>
-
-                            <div class="col-md-6">
-                                <input id="designation" type="input" class="form-control" name="designation" value="{{$profile->surname}}" >
-
-                                @if ($errors->has('designation'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('designation') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
 
                         <div class="form-group{{ $errors->has('profile_pic') ? ' has-error' : '' }}">
                             <label for="profile_pic" class="col-md-4 control-label">Profile Picture</label>

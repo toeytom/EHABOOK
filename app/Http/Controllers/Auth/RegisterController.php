@@ -65,13 +65,9 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        if(!$data['profile_pic']){
+     
             $profile='/images/avatar.png';
-            }
-            else
-            {
-                $profile = $data['profile_pic'];
-            }
+          
         return User::create([
             'email' => $data['email'],
             'user_name' => $data['name'],

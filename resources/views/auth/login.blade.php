@@ -2,27 +2,33 @@
 
 @section('content')
 
+        
 
-<div class="container"> 
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+
+       
+        
 
 <div class="container">
-    <div class="row justify-content-end">
-        <div class="col-md-8 col-md-auto">
 
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+        <div class="main-login main-center">
+    
+        
+            
+           
+                <div class="panel-heading " style="text-align:center; ">ยินดีต้อนรับสู่ E-HA 3OOK</div> 
+                    <p></p>
+               
+                   
+                    <form  method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
-
+                        
+                        
+                        
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                           
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                            <div >
+                                <input id="email" placeholder="E-Mail Address" class="outlinebox"type="email"  name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -33,10 +39,10 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+                            
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                            <div >
+                                <input id="password" placeholder="Password" class="outlinebox" type="password"  name="password" required>
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -47,48 +53,77 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
+                            <div >
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me <a href="{{ route('password.request') }}">
+                                            Forgot Your Password?
+                                        </a>
                                     </label>
+                                   
                                 </div>
                             </div>
                         </div>
 
+                        
                         <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
+                                <div >
+                                    <button type="submit" class="btn btn-success  btn-block">
+                                        เข้าสู่ระบบ
+                                    </button>
+                                    
+                                    
+                                </div>
+                        </div>
                                 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                        <br />
-                        <p style="margin-left:150px">OR</p>
-                        <br />
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                              <a href="{{url('/auth/facebook')}}" ><img src="img/fb_but.png"
-                                 alt="Cinque Terre" height="35" width="35" ></a>
-                               
-                              <a href="{{url('/auth/google')}}" ><img src="img/google_but.png"
-                                alt="Cinque Terre" height="35" width="35" ></a>
-                              <a href="{{url('/auth/twitter')}}" ><img src="img/twitter_but.jpg"
-                                alt="Cinque Terre" height="35" width="35" ></a>
-                            </div>
-                        </div>
-                       
-                       
                     </form>
-                </div>
-            </div>
-        </div>
+                            
+                        
+                     
+                        <p  style="text-align:center" >OR</p>
+                      
+                        
+                                <div ><a href="{{url('/auth/facebook')}}" >
+                                        <button type="submit" class="btn btn-primary-change  btn-block active" >
+                                           
+                                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png" style="float:left;margin-right:0.5em" alt="Cinque Terre" height="25" width="25"> เข้าสู่ระบบด้วย เฟซบุ๊ก
+                                        </button>
+                                    </a>
+                                        
+                                    </div>
+                                    <p></p>
+                                    <div ><a href="{{url('/auth/twitter')}}" >
+                                        <button type="submit" class="btn btn-info-change  btn-block " >
+                                           
+                                                <img src="img/twitter_but.png" style="float:left;margin-right:0.5em" alt="Cinque Terre" height="25" width="25"> เข้าสู่ระบบด้วย ทวิตเตอร์
+                                        </button>
+                                    </a>
+                                    <p></p>
+                                    <div ><a href="{{url('/auth/google')}}" >
+                                        <button type="submit" class="btn btn-gg-change  btn-block " >
+                                           
+                                                <img src="img/google_but.png" style="float:left;margin-right:0.5em" alt="Cinque Terre" height="25" width="25"> เข้าสู่ระบบด้วย กูเกิ้ลพลัส
+                                        </button>
+                                    </a>
+                                        
+                                    </div>
+                             
+                            
+                        
+                        
+                       
+                    
+                    
+                
+                
+                
+           
+            
+        
+        
     </div>
 </div>
+
 
 
 @endsection

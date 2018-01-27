@@ -18,7 +18,7 @@ class ProfileController extends Controller
                     ->select('*')
                     ->where(['id' => $user_id])
                     ->first();
-        return view('user_ava',['profile'=>$profile]);
+        return view('profile.profile',['profile'=>$profile]);
     }
     public function index()
     {
@@ -34,8 +34,8 @@ class ProfileController extends Controller
     public function addProfile(Request $request){
         $this->validate($request,[
             'name' => 'required',
-            'designation' => 'required',
-            'user_ava' => 'required'
+           
+            'profile_pic' => 'required'
         ]);
        
        
@@ -56,7 +56,7 @@ class ProfileController extends Controller
             $url = URL::to("/") . '/uploads/'.$str.$file->getClientOriginalName();
 
             $profile = User::where('id',Auth::user()->id)->
-            update(['name'=>$request->input('name'),'surname'=>$request->input('designation'),'profile_pic'=>$url]);
+            update(['user_name'=>$request->input('name'),'user_ava'=>$url]);
 
           }
         

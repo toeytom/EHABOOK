@@ -22,7 +22,7 @@
                     <div class="col-md-4">
                     @if(!empty($profile))
                         <img src="{{ $profile->user_ava}}"
-                        class= "rounded-circle" height="50" width="50" alt="">
+                        class= "rounded-circle" height="100" width="50" alt="">
                     @else
                         <img src="{{ url('images/avatar.png') }}"
                         class="rounded-circle" alt="">
