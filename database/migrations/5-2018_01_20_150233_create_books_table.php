@@ -18,6 +18,7 @@ class CreateBooksTable extends Migration
             $table->string('book_name', 500);
             $table->string('book_cover', 500);
             $table->string('book_author',500);
+            $table->string('book_publisher',500);
             $table->string('book_category', 500);
             $table->decimal('book_price', 7, 2);
             $table->integer('book_page_per_book');
@@ -26,6 +27,8 @@ class CreateBooksTable extends Migration
             $table->string('book_demo', 500);
             $table->string('book_description', 500);
             $table->string('book_address', 500);
+            $table->date('book_date');
+
             $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
