@@ -2,14 +2,10 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Http\Request;
-use App\Books;
-use App\Comments;
-use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
-use DateTime;
-class BookController extends Controller
+use App\Http\Controllers\Controller;
+
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,19 +14,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        
-        $book_id = 3;
-        $book_name = Books::where(['book_id' => $book_id])
-                    ->first();
-        $comment_id = 1;
-        $comments =Comments::where(['comment_id' => $comment_id])->get();
-        foreach($comments as $comment) {
-            $comment->user = DB::table('users')->find($comment->user_id);
-        }
-
-
-
-        return view('bookDetail',compact('book_name', 'comments'));
+     //
     }
 
     /**
@@ -98,59 +82,4 @@ class BookController extends Controller
     {
         //
     }
-
-    
-
-
-}  
-
-
-
-
-
-        
-        
-        
-        
-        
-        
-        
-        
-        /*
-        $validatedData = $request->validate([
-            'name' => 'required',
-            'designation' => 'required',
-            'profile_pic'=>'required'
-        ]);
-        return $request->input('name');
-
-
-
-        $profile->profile_pic = $request->input('profile_pic');
-        
-        return Auth::user();
-        exit();
-*/
-        
-            
-
-
-
-        
-
-
-        //$request->input('designation');
-
-        /*
-
-        
-        
-        
-        */
- 
-        
-        
-        
-    
-
-
+}

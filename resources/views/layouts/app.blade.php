@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="icon" href="logo1.png" type="image/gif" sizes="16x16">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -20,6 +20,74 @@
       background-size: cover;
     
     }
+<<<<<<< HEAD
+
+    h3 {
+      color:darkgrey;
+      margin-left:20px;
+      margin-top:20px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-weight: lighter;
+  }
+  
+  
+  .rate-area {
+      float:left;
+      border-style: none;
+  }
+  
+  .rate-area:not(:checked) > input {
+      position:absolute;
+      top:-9999px;
+      clip:rect(0,0,0,0);
+  }
+  
+  .rate-area:not(:checked) > label {
+      float:right;
+      width:1em;
+      padding:0 .1em;
+      overflow:hidden;
+      white-space:nowrap;
+      cursor:pointer;
+      font-size:200%;
+      line-height:1.2;
+      color:lightgrey;
+      text-shadow:1px 1px #bbb;
+  }
+  
+  .rate-area:not(:checked) > label:before {
+      content: '★ ';
+  }
+  
+  .rate-area > input:checked ~ label {
+      color: gold;
+      text-shadow:1px 1px #c60;
+      font-size:200% !important;
+  }
+  
+  .rate-area:not(:checked) > label:hover,
+  .rate-area:not(:checked) > label:hover ~ label {
+      color: gold;
+      
+  }
+  
+  .rate-area > input:checked + label:hover,
+  .rate-area > input:checked + label:hover ~ label,
+  .rate-area > input:checked ~ label:hover,
+  .rate-area > input:checked ~ label:hover ~ label,
+  .rate-area > label:hover ~ input:checked ~ label {
+      color: gold;
+      text-shadow: 1px 1px goldenrod;   
+      
+  }
+  
+  .rate-area > label:active {
+      position:relative;
+      top:2px;
+      left:2px;
+  }
+  
+=======
     .main-login{
       background-color: #fff;
        /* shadows and rounded borders */
@@ -45,6 +113,7 @@
   border-bottom: 1px solid gray;
 
 }
+>>>>>>> ba831ed7d6f95b59d55021a4b46d367daebb5c64
     
 .btn-info-change{
   background-color: #00aced !important;

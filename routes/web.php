@@ -12,7 +12,13 @@
 */
 
 
+<<<<<<< HEAD
 Route::get('/', 'IndexController@index');
+=======
+
+
+
+>>>>>>> 4688b893a8d18cb0493c7bcc02fabd04ee0b9e4f
 Auth::routes();
 Route::get('auth/facebook', 'SocialAuthFacebookController@redirect');
 Route::get('auth/facebook/callback', 'SocialAuthFacebookController@callback');
@@ -38,7 +44,16 @@ Route::get('/test',function(){
     return view('/auth/passwords/test');
 });
 Route::get('/read','ReadController@index');
+
+/*
+Route::get('/detail', function () {
+    return view('bookDetail');
+});
+*/
+Route::get('/detail','BookController@index');
+
 Route::get('/addbook','BookController@addbook')->name('addbook');
 Route::post('/addbook', 'BookController@addbooks')->name('addbook');
+
 
 

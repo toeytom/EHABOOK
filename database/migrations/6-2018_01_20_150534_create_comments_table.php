@@ -16,11 +16,11 @@ class CreateCommentsTable extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('comment_id');
             $table->string('comment_taxt', 45);
-            $table->dateTime('comment_dateTime');
             $table->integer('user_id')->unsigned();
             $table->integer('book_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('book_id')->references('book_id')->on('books')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
