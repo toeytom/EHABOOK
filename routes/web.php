@@ -11,10 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+Route::get('/', 'IndexController@index');
 Auth::routes();
 Route::get('auth/facebook', 'SocialAuthFacebookController@redirect');
 Route::get('auth/facebook/callback', 'SocialAuthFacebookController@callback');

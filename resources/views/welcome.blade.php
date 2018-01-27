@@ -26,322 +26,34 @@
       
       </div>
     
+    <p>
+    </p>
+      <div class="row">
+    @foreach($books as $book)
+   
+   <div class="col-md-2">
     
+   
+      <img  src="{{$book->book_cover}}" alt="..." width="150" height="190">
+      <div class="caption">
+      	
+        <h3>{{$book->book_name}}</h3>
+        <p>{{$book->book_rate}}</p>
+        <p>{{$book->book_price}}
+        </p>
+   
+  </div>
 </div>
-<div class="box">
-  <div class="row">
-    <div class="container">
-      <form class="form-inline">
-        <div class="col-sm-6" align="left">
-        <a>ออกใหม่</a></div>
-        <div class="col-sm-6" align="right">
-        <a>เพิ่มเติม</a>
-           <span class="glyphicon glyphicon-chevron-right"></span>
-        </div>
-      </form>
-    </div>
-  </div>
 
-  <div class="row">
-      <div class="col-sm-12" >
-        <section id="showBook" >
-        <div class="container" >
-                <form class="form-inline" >
-                   <div class="form-group"> 
-                    <div class="col-sm-2">
-                      <img src="./img/01.png" width="150" height="190">
-                      <p>name</p>
-                      <button type="button" class="btn btn-success btn-xs ">฿123.0</button>
-                  </div>
-                </div>
-
-                  <div class="form-group" > 
-                    <div class="col-sm-2" >
-                      <img src="./img/02.png" width="150" height="190">
-                      <p>name</p>
-                      <button type="button" class="btn btn-success btn-xs " >฿123.0</button>
-                  </div>
-                </div>
-
-                <div class="form-group"> 
-                    <div class="col-sm-2">
-                      <img src="./img/03.png" width="150" height="190">
-                      <p>name</p>
-                      <button type="button" class="btn btn-success btn-xs ">฿123.0</button>
-                  </div>
-                </div>
-
-                <div class="form-group"> 
-                    <div class="col-sm-2">
-                      <img src="./img/04.png" width="150" height="190">
-                      <p>name</p>
-                      <button type="button" class="btn btn-success btn-xs ">฿123.0</button>
-                  </div>
-                </div>
-
-                <div class="form-group"> 
-                    <div class="col-sm-2">
-                      <img src="./img/05.png" width="150" height="190">
-                      <p>name</p>
-                      <button type="button" class="btn btn-success btn-xs ">฿123.0</button>
-                  </div>
-                </div>
-
-                <div class="form-group"> 
-                    <div class="col-sm-2">
-                      <img src="./img/06.png" width="150" height="190">
-                      <p>name</p>
-                      <button type="button" class="btn btn-success btn-xs ">฿123.0</button>
-                  </div>
-                </div>
-              </form>
-        </div>
-      </section>
-    </div>
-  </div>
-</div> 
-
-
-<div class="box-p">
-  <div class="row">
-    <div class="container">
-      <form class="form-inline">
-        <div class="col-sm-6" align="left">
-        <a>ออกใหม่ในหมวด Non-fiction</a></div>
-        <div class="col-sm-6" align="right">
-        <a>เพิ่มเติม</a>
-           <span class="glyphicon glyphicon-chevron-right"></span>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-12">
-  <section id="showBook">
-    <div class="container">
-            <form class="form-inline" >
-               <div class="form-group"> 
-                <div class="col-sm-2">
-                  <img src="./img/01.png" width="150" height="190">
-                  <p>name</p>
-                  <button type="button" class="btn btn-success btn-xs ">฿123.0</button>
-              </div>
-            </div>
-
-              <div class="form-group"> 
-                <div class="col-sm-2">
-                  <img src="./img/02.png" width="150" height="190">
-                  <p>name</p>
-                  <button type="button" class="btn btn-success btn-xs ">฿123.0</button>
-              </div>
-            </div>
-
-            <div class="form-group"> 
-                <div class="col-sm-2">
-                  <img src="./img/03.png" width="150" height="190">
-                  <p>name</p>
-                  <button type="button" class="btn btn-success btn-xs ">฿123.0</button>
-              </div>
-            </div>
-
-            <div class="form-group"> 
-                <div class="col-sm-2">
-                  <img src="./img/04.png" width="150" height="190">
-                  <p>name</p>
-                  <button type="button" class="btn btn-success btn-xs ">฿123.0</button>
-              </div>
-            </div>
-
-            <div class="form-group"> 
-                <div class="col-sm-2">
-                  <img src="./img/05.png" width="150" height="190">
-                  <p>name</p>
-                  <button type="button" class="btn btn-success btn-xs ">฿123.0</button>
-              </div>
-            </div>
-
-            <div class="form-group"> 
-                <div class="col-sm-2">
-                  <img src="./img/06.png" width="150" height="190">
-                  <p>name</p>
-                  <button type="button" class="btn btn-success btn-xs ">฿123.0</button>
-              </div>
-            </div>
-          </form>
-    </div>
-  </section>
-  </div>
-  </div>
-</div> 
-
-
-<div class="box">
-  <div class="row">
-    <div class="container">
-      <form class="form-inline">
-        <div class="col-sm-6" align="left">
-        <a>ออกใหม่ในหมวด วรรณกรรมทั่วไป</a></div>
-        <div class="col-sm-6" align="right">
-        <a>เพิ่มเติม</a>
-           <span class="glyphicon glyphicon-chevron-right"></span>
-        </div>
-      </form>
-    </div>
-  </div>
-
-
-
-<div class="row">
-  <div class="col-sm-12">
-<section id="showBook">
-  <div class="container">
-
-          <form class="form-inline" >
-             <div class="form-group"> 
-              <div class="col-sm-2">
-                <img src="./img/01.png" width="150" height="190">
-                <p>name</p>
-                <button type="button" class="btn btn-success btn-xs ">฿123.0</button>
-            </div>
-          </div>
-
-            <div class="form-group"> 
-              <div class="col-sm-2">
-                <img src="./img/02.png" width="150" height="190">
-                <p>name</p>
-                <button type="button" class="btn btn-success btn-xs ">฿123.0</button>
-            </div>
-          </div>
-
-          <div class="form-group"> 
-              <div class="col-sm-2">
-                <img src="./img/03.png" width="150" height="190">
-                <p>name</p>
-                <button type="button" class="btn btn-success btn-xs ">฿123.0</button>
-            </div>
-          </div>
-
-          <div class="form-group"> 
-              <div class="col-sm-2">
-                <img src="./img/04.png" width="150" height="190">
-                <p>name</p>
-                <button type="button" class="btn btn-success btn-xs ">฿123.0</button>
-            </div>
-          </div>
-
-          <div class="form-group"> 
-              <div class="col-sm-2">
-                <img src="./img/05.png" width="150" height="190">
-                <p>name</p>
-                <button type="button" class="btn btn-success btn-xs ">฿123.0</button>
-            </div>
-          </div>
-
-          <div class="form-group"> 
-              <div class="col-sm-2">
-                <img src="./img/06.png" width="150" height="190">
-                <p>name</p>
-                <button type="button" class="btn btn-success btn-xs ">฿123.0</button>
-            </div>
-          </div>
-
-        </form>
-  
-  </div>
-</section>
+  @endforeach
 </div>
-</div>
-  </div>  
-
-
-<div class="box-p">
-  <div class="row">
-    <div class="container">
-      <form class="form-inline">
-        <div class="col-sm-6" align="left">
-        <a>ออกใหม่ในหมวด วรรณกรรมทั่วไป</a></div>
-        <div class="col-sm-6" align="right">
-        <a>เพิ่มเติม</a>
-           <span class="glyphicon glyphicon-chevron-right"></span>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-12">
-  <section id="showBook">
-    <div class="container">
-      
-            <form class="form-inline" >
-               <div class="form-group"> 
-                <div class="col-sm-2">
-                  <img src="./img/01.png" width="150" height="190">
-                  <p>name</p>
-                  <button type="button" class="btn btn-success btn-xs ">฿123.0</button>
-              </div>
-            </div>
-
-              <div class="form-group"> 
-                <div class="col-sm-2">
-                  <img src="./img/02.png" width="150" height="190">
-                  <p>name</p>
-                  <button type="button" class="btn btn-success btn-xs ">฿123.0</button>
-              </div>
-            </div>
-
-            <div class="form-group"> 
-                <div class="col-sm-2">
-                  <img src="./img/03.png" width="150" height="190">
-                  <p>name</p>
-                  <button type="button" class="btn btn-success btn-xs ">฿123.0</button>
-              </div>
-            </div>
-
-            <div class="form-group"> 
-                <div class="col-sm-2">
-                  <img src="./img/04.png" width="150" height="190">
-                  <p>name</p>
-                  <button type="button" class="btn btn-success btn-xs ">฿123.0</button>
-              </div>
-            </div>
-
-            <div class="form-group"> 
-                <div class="col-sm-2">
-                  <img src="./img/05.png" width="150" height="190">
-                  <p>name</p>
-                  <button type="button" class="btn btn-success btn-xs ">฿123.0</button>
-              </div>
-            </div>
-
-            <div class="form-group"> 
-                <div class="col-sm-2">
-                  <img src="./img/06.png" width="150" height="190">
-                  <p>name</p>
-                  <button type="button" class="btn btn-success btn-xs ">฿123.0</button>
-              </div>
-            </div>
-
-          </form>
-       
-    </div>
-  </section>
-  </div>
-  </div>
-</div> 
-
-
-
-
-
 
 
 
 <footer class="container-fluid" align="center">
-  <p line-height="50px">
-   <img src="./img/pipeBlack.png" width="1200" height="10" ><br>
-    <p>© 2017 E-HA BOOK ALL RIGHTS RESERVED</p></p>
+
+
+    <p >© 2017 E-HA BOOK ALL RIGHTS RESERVED</p></p>
 </footer>
 
 @endsection
