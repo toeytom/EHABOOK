@@ -20,7 +20,7 @@
       background-size: cover;
     
     }
-<<<<<<< HEAD
+
 
     h3 {
       color:darkgrey;
@@ -87,7 +87,7 @@
       left:2px;
   }
   
-=======
+
     .main-login{
       background-color: #fff;
        /* shadows and rounded borders */
@@ -113,8 +113,7 @@
   border-bottom: 1px solid gray;
 
 }
->>>>>>> ba831ed7d6f95b59d55021a4b46d367daebb5c64
-    
+
 .btn-info-change{
   background-color: #00aced !important;
   border-color: #00aced!important;

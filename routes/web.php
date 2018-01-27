@@ -12,13 +12,12 @@
 */
 
 
-<<<<<<< HEAD
 Route::get('/', 'IndexController@index');
-=======
 
 
 
->>>>>>> 4688b893a8d18cb0493c7bcc02fabd04ee0b9e4f
+
+
 Auth::routes();
 Route::get('auth/facebook', 'SocialAuthFacebookController@redirect');
 Route::get('auth/facebook/callback', 'SocialAuthFacebookController@callback');
@@ -26,7 +25,7 @@ Route::get('auth/google', 'SocialAuthFacebookController@redirectg');
 Route::get('auth/google/callback', 'SocialAuthFacebookController@callbackg');
 Route::get('auth/twitter', 'SocialAuthFacebookController@redirectt');
 Route::get('auth/twitter/callback', 'SocialAuthFacebookController@callbackt');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'IndexController@index')->name('home');
 
 Route::get('/profile','ProfileController@profile');
 Route::get('/showprofile','ProfileController@index');

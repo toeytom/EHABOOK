@@ -35,14 +35,13 @@
     
    
       <img  src="{{$book->book_cover}}" alt="..." width="150" height="190">
-      <div class="caption">
+    
       	
         <h3>{{$book->book_name}}</h3>
         <p>{{$book->book_rate}}</p>
         <p>{{$book->book_price}}
         </p>
-   
-  </div>
+
 </div>
 
   @endforeach
