@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+
 Auth::routes();
 Route::get('auth/facebook', 'SocialAuthFacebookController@redirect');
 Route::get('auth/facebook/callback', 'SocialAuthFacebookController@callback');
@@ -40,5 +43,11 @@ Route::get('/test',function(){
     return view('/auth/passwords/test');
 });
 Route::get('/read','ReadController@index');
+/*
+Route::get('/detail', function () {
+    return view('bookDetail');
+});
+*/
+Route::get('/detail','BookController@index');
 
 
