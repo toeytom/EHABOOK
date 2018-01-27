@@ -52,7 +52,7 @@
         </div>
         <button type="button" class="btn btn-default">Submit</button>         
     </div>
-test coment boxc     --}}
+test coment boxc     hello--}}
 
     @forelse ($comments as $comment)
     <div class="row">
