@@ -32,12 +32,12 @@ Route::get('/showprofile','ProfileController@index');
 Route::post('/addProfile','ProfileController@addProfile');
 
 Route::get('/changepass','ChangePasswordController@index')->name('changepass');
-Route::post('/changepass','ChangePasswordController@change')->name('changepass');
+Route::post('/changepass','ChangePasswordController@addcreditcard');
 
 Route::get('/stripe','StripeController@payWithStripe')->name('stripform');
 Route::post('/stripe', 'StripeController@postPaymentWithStripe')->name('paywithstripe');
 Route::get('/addcard', 'StripeController@addcard')->name('addcard');
-Route::post('/addcard', 'StripeController@addcreditcard')->name('addcreditcard');
+Route::post('/addcard', 'StripeController@addcreditcard');
 
 Route::get('/test',function(){
     return view('/auth/passwords/test');

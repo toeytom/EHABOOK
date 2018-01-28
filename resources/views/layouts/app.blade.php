@@ -7,10 +7,14 @@
     <link rel="icon" href="logo1.png" type="image/gif" sizes="16x16">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+   
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Stylesd -->
+    
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<link rel="stylesheet" href="fontawesome-stars.css">
+
     <style>
     body { 
       background: url('{{asset("bg.jpg")}}') no-repeat center center fixed; 
@@ -99,12 +103,21 @@
        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
    
    }
+
    .main-center{
  	margin-top: 30px;
  	margin: 0 auto;
  	max-width: 50%;
     padding: 40px 40px;
     
+
+}
+.main-centerp{
+  margin-top: 30px;
+  margin: 0 auto;
+  max-width: 70%;
+   padding: 40px 40px;
+   
 
 }
 .outlinebox {
@@ -136,10 +149,31 @@
   background-color: #1aabee !important;
   border-color: #1aabee!important;
   color: #ffffff!important;
- 
- 
- 
 }
+
+   
+    
+        
+    
+    
+          
+    
+    
+        /* .btn{
+      background-color: #4caf50;
+      border: none;
+      outline: 0; 
+    }
+    .btn:hover{
+      background-color: #0a910c;
+      color: #ffff;
+      border: none;
+      outline: 0; 
+      transition: 0.9s;
+    } */
+      
+ 
+
    
     
   </style>
@@ -212,7 +246,7 @@
                 <div class="dropdown-menu" style="background-color: rgba(255, 255, 255, 0.7)!important" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#" > <img src="{{ Auth::user()->user_ava}}"
                           class="rounded-circle" alt="Cinque Terre" height="150" width="150" ></a>
-                          <center><a ><button class="btn btn-profile-change btn-block">แก้ไขโปรไฟล์</button></a></center> 
+                          <center><a href="/changepass"><button class="btn btn-profile-change btn-block">แก้ไขโปรไฟล์</button></a></center> 
                           <p></p>
                           <a  href="{{ route('logout') }}"
                           onclick="event.preventDefault();
@@ -224,8 +258,7 @@
                     <div class="dropdown-divider"></div>
                  
                    
-             
-                                                      
+                                                        
                 </div>
               </li>
               @endguest
@@ -239,10 +272,12 @@
     </div>
 
     <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
     <script
 			  src="https://code.jquery.com/jquery-3.2.1.slim.js"
 			  integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg="
               crossorigin="anonymous"></script>
+              <script src="jquery.rateyo.js"></script>
               <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="{{ asset('js/app.js') }}"></script>

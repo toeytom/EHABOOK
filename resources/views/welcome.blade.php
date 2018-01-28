@@ -35,14 +35,36 @@
     
     <a href="#">
    
+       
+      
       <img  src="{{$book->book_cover}}" alt="..." width="150" height="190">
     
+<<<<<<< HEAD
     </a>	
         <h3>{{$book->book_name}}</h3>
         <p>{{$book->book_rate}}</p>
         <p>{{$book->book_price}}
         </p>
 
+=======
+     
+      <a href="/detail?book={{$book->book_id}}"><h4>{{$book->book_name}}</h4></a>
+        <p>{{$book->book_score}}</p>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        @for($i=0;$i<5;$i++)
+        @if($i<4)
+        <span class="fa fa-star"></span>
+        @else
+       
+        <span class="fa fa-star checked"></span>
+        @endif
+       @endfor
+       <p></p>
+       <button type="submit" value="{{$book->book_id}}"class="btn btn-success">{{$book->book_price}}</button> 
+<p></p>
+    
+>>>>>>> 821e4d38a6f5a0473a5ab8442609e3a2e989b601
 </div>
 
   @endforeach
@@ -58,7 +80,20 @@
 
 @endsection
 @section('javascript')
-
+<script>
+  
+    $(function () {
+ 
+      $("#rateYo").rateYo({
+        normalFill: "#A0A0A0"
+      });
+     
+    });
+    var normalFill = $("#rateYo").rateYo("option", "normalFill"); //returns "#A0A0A0"
+ 
+    // Setter
+    $("#rateYo").rateYo("option", "normalFill", "#B0B0B0"); //returns a jQuery Element
+</script>
 @endsection
 
 
