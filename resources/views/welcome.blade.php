@@ -35,19 +35,9 @@
     
     <a href="#">
    
-       
-      
       <img  src="{{$book->book_cover}}" alt="..." width="150" height="190">
-    
-<<<<<<< HEAD
-    </a>	
-        <h3>{{$book->book_name}}</h3>
-        <p>{{$book->book_rate}}</p>
-        <p>{{$book->book_price}}
-        </p>
-
-=======
-     
+    </a>
+  
       <a href="/detail?book={{$book->book_id}}"><h4>{{$book->book_name}}</h4></a>
         <p>{{$book->book_score}}</p>
         <span class="fa fa-star checked"></span>
@@ -64,7 +54,7 @@
        <button type="submit" value="{{$book->book_id}}"class="btn btn-success">{{$book->book_price}}</button> 
 <p></p>
     
->>>>>>> 821e4d38a6f5a0473a5ab8442609e3a2e989b601
+
 </div>
 
   @endforeach
