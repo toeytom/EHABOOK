@@ -33,24 +33,22 @@
    
    <div class="col-md-2">
     
-<<<<<<< HEAD
-    
-=======
+
     <a href="/detail?book={{$book->book_id}}">
->>>>>>> 8b9bf46f661e2bda56a1acbe1fc0f3a87d9835cf
+
    
       <img  src="{{$book->book_cover}}" alt="..." width="150" height="190">
-<<<<<<< HEAD
+
     
 
    	
        
 
      
-=======
+
     </a>
   
->>>>>>> 8b9bf46f661e2bda56a1acbe1fc0f3a87d9835cf
+
       <a href="/detail?book={{$book->book_id}}"><h4>{{$book->book_name}}</h4></a>
         <p>{{$book->book_score}}</p>
         <span class="fa fa-star checked"></span>
