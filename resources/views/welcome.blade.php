@@ -34,11 +34,8 @@
    <div class="col-md-2">
     
 
-<<<<<<< HEAD
     
 
-=======
->>>>>>> 6f9ae7bd59656015b2c7d77aef9d457de1203851
     <a href="/detail?book={{$book->book_id}}">
 
    
