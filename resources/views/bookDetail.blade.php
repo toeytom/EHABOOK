@@ -73,7 +73,10 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
+                        <img src="{{$comment->user->user_ava}}"
+                        class="rounded-circle" alt="Cinque Terre" height="35" width="35" > 
                     {{$comment->user->user_name}}
+                   
                     @if(Auth::user()->id==$comment->user->id)
                     <span class="float-right">
                            
