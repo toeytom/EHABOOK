@@ -79,10 +79,53 @@
             <div class="card">
                 <div class="card-header">
                     {{$comment->user->user_name}}
+                    @if(Auth::user()->id==$comment->user->id)
                     <span class="float-right">
+<<<<<<< HEAD
                         <a href="#" class="btn btn-warning">แก้ไข</a>
                         <a href="#" class="btn btn-danger">ลบ</a>
+=======
+                           
+                                
+                               
+                                <button type="button" class="btn btn-warning"data-toggle="modal" data-target="#{{$comment->comment_id}}">แก้ไข</button>
+                                
+                                <div class="modal fade" id="{{$comment->comment_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                          <div class="modal-content">
+                                                <form class="form-horizontal" method="POST" action="/ecomment">
+                                                    {{ csrf_field() }}
+                                            <div class="modal-header">
+                                                    
+                                              <h5 class="modal-title" id="exampleModalLabel">แก้ไขความความคิดเห็น</h5>
+                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                    <input type="hidden" name="comment" value="{{$comment->comment_id}}">
+                                                    <input type="hidden" name="id" value="{{$book_name->book_id}}">
+                                                    <textarea class="form-control" id="exampleFormControlTextarea1" name="commentt" rows="3"></textarea>
+                                            </div>
+                                            <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-warning">แก้ไข</button>
+                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                              
+                                            </div>
+                                        </form>
+                                          </div>
+                                        </div>
+                                      </div>
+                   
+                    <form class="form-horizontal" method="POST" action="/dcomment">
+                        {{ csrf_field() }}
+                    <input type="hidden" name="comment" value="{{$comment->comment_id}}">
+                    <input type="hidden" name="id" value="{{$book_name->book_id}}">
+                    <button type="submit" class="btn btn-danger">ลบ</button>
+                    </form>
+>>>>>>> 6f9ae7bd59656015b2c7d77aef9d457de1203851
                     </span>
+                    @endif
                 </div>
                 <div class="card-body">
                     {{$comment->comment_taxt}}
@@ -95,6 +138,7 @@
                 </div>
             </div>
 
+<<<<<<< HEAD
             <!-- /.row -->
             @empty
             <h2>No Comment!!</h2>
@@ -131,3 +175,9 @@
                     </div>
                     </div>
                   </div>
+=======
+    <!-- /.row -->
+    @empty
+   
+    @endforelse @endsection @section('javascript') @endsection
+>>>>>>> 6f9ae7bd59656015b2c7d77aef9d457de1203851

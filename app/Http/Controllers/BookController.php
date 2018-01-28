@@ -67,6 +67,22 @@ class BookController extends Controller
 
         
     }
+    public function dcomment(Request $request)
+    {
+
+       Comments::where('comment_id',$request->input("comment"))->delete();
+       return redirect("detail?book=".$request->input("id"));
+
+        
+    }
+    public function ecomment(Request $request)
+    {
+
+       Comments::where('comment_id',$request->input("comment"))->update(['comment_taxt'=>$request->input("commentt")]);
+       return redirect("detail?book=".$request->input("id"));
+
+        
+    }
 
     /**
      * Display the specified resource.

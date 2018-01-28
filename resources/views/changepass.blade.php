@@ -96,6 +96,7 @@
 
           <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
 
+<<<<<<< HEAD
             <div class="row">
                 <div class="col-sm-12">
                     <div align="center">
@@ -107,6 +108,11 @@
                            </div>
                     </div>
                 </div>
+=======
+    
+                <img src="1.png" >
+        
+>>>>>>> 6f9ae7bd59656015b2c7d77aef9d457de1203851
             <br>
 
 
