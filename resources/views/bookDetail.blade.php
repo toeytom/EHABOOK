@@ -84,10 +84,9 @@
                    
                     @if(Auth::user()->id==$comment->user->id)
                     <span class="float-right">
-<<<<<<< HEAD
-                        <a href="#" class="btn btn-warning">แก้ไข</a>
-                        <a href="#" class="btn btn-danger">ลบ</a>
-=======
+
+                       
+
                            
                                 
                                
@@ -126,7 +125,7 @@
                     <input type="hidden" name="id" value="{{$book_name->book_id}}">
                     <button type="submit" class="btn btn-danger">ลบ</button>
                     </form>
->>>>>>> 6f9ae7bd59656015b2c7d77aef9d457de1203851
+
                     </span>
                     @endif
                 </div>
@@ -134,23 +133,19 @@
                     {{$comment->comment_taxt}}
                 </div>
                 <div class="footer text-right">
-<<<<<<< HEAD
-                    {{$comment->created_at->diffForHumans()}}
+                        {{$comment->updated_at->diffForHumans()}}
                     <div>
                     </div>
                     <!-- /.panecl -->
                 </div>
-=======
-                    {{$comment->updated_at->diffForHumans()}}
+
                 <div>
->>>>>>> 29da9f8ee979ca8564688e94d27bdb24d6c11b47
+
             </div>
 
-<<<<<<< HEAD
+
             <!-- /.row -->
-            @empty
-            <h2>No Comment!!</h2>
-            @endforelse @endsection @section('javascript') @endsection
+     
 
                   <!-- Modal -->
                   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -183,9 +178,9 @@
                     </div>
                     </div>
                   </div>
-=======
+
     <!-- /.row -->
     @empty
    
     @endforelse @endsection @section('javascript') @endsection
->>>>>>> 6f9ae7bd59656015b2c7d77aef9d457de1203851
+
