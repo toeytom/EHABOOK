@@ -20,7 +20,7 @@
     </div>
     <div class="row">
         <div class="col-sm-4">
-            <img border="0" src="{{ $book_name-> book_cover }}" width="200" height="300px">
+            <img border="0" src="{{ $book_name-> book_cover }}" width="70%" height="60%">
             <br> ยอดจำหน่าย
             <h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;฿ {{ $book_name-> book_price }} </h1>
         </div>
@@ -40,31 +40,36 @@
                 <br> &nbsp; &nbsp; &nbsp;{{ $book_name-> book_description }}
                 <br>
             </p>
-        </div>
-        
-  </div>
-   <div class="row">
+            
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    ซื้อเลย
+                  </button>
 
-    
-    
-    <div class="col-sm-12">
+            <button type="button" class="btn btn-light">ทดลองอ่าน</button>
+        </div>
+
+    </div>
+    <div class="row">
+
+
+
+        <div class="col-sm-12">
             <form class="form-horizontal" method="POST" action="/comment">
                 {{ csrf_field() }}
+                <div class="form-group">
+                    <label for="comment">แสดงความคิดเห็น:</label>
 
+                    <textarea class="form-control" rows="5" id="comment" style="resize:none" name="comment"></textarea>
+                    <input type="hidden" name="id" value="{{$book_name->book_id}}">
+                </div>
 
-        <div class="form-group">
-            <label for="comment">Comment:</label>
-            
-             <textarea class="form-control" rows="5" id="comment" style="resize:none" name="comment"></textarea>
-             <input type="hidden" name="id" value="{{$book_name->book_id}}">
+                <button type="submit" class="btn btn-default">ยืนยัน</button>
+            </form>
+
         </div>
-
-        <button type="submit" class="btn btn-default">Submit</button>     </form>    
-        
-    </div>
     </div>
     <div class="col-sm-12">
-        <br>   
+        <br>
 
     </div>
 
@@ -75,8 +80,8 @@
                 <div class="card-header">
                     {{$comment->user->user_name}}
                     <span class="float-right">
-                    <a href="#" class="btn btn-warning">แก้ไข</a>
-                    <a href="#" class="btn btn-danger">ลบ</a>
+                        <a href="#" class="btn btn-warning">แก้ไข</a>
+                        <a href="#" class="btn btn-danger">ลบ</a>
                     </span>
                 </div>
                 <div class="card-body">
@@ -84,13 +89,45 @@
                 </div>
                 <div class="footer text-right">
                     {{$comment->created_at->diffForHumans()}}
-                <div>
+                    <div>
+                    </div>
+                    <!-- /.panecl -->
+                </div>
             </div>
-            <!-- /.panecl -->
-        </div>
-    </div>
 
-    <!-- /.row -->
-    @empty
-    <h2>No Comment!!</h2>
-    @endforelse @endsection @section('javascript') @endsection
+            <!-- /.row -->
+            @empty
+            <h2>No Comment!!</h2>
+            @endforelse @endsection @section('javascript') @endsection
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="col-md-12">
+                                <div align="center">
+                          <h5 class="modal-title" id="exampleModalLabel">ซื้อหนังสือเล่มนี้?</h5>
+                                </div>
+                            </div>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                            <div align="center">
+                                {{ $book_name-> book_name }} <br>
+                                ฿ {{ $book_name-> book_price }}
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        <div class="col-md-12">
+                            <div align="center">
+                            <button type="button" class="btn btn-success" >ใช่</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
