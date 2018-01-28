@@ -23,12 +23,12 @@ class BookController extends Controller
         $book_id = $request->input('book');
         $book_name = Books::where(['book_id' => $book_id])
                     ->first();
-
         
         $comments =Comments::where(['book_id' => $book_id])->get();
 
-        $comment_id = $request->input('book');
-        $comments =Comments::where(['book_id' => $comment_id])->get();
+
+     
+
 
         foreach($comments as $comment) {
             $comment->user = DB::table('users')->find($comment->user_id);
@@ -57,12 +57,14 @@ class BookController extends Controller
      */
     public function addcomment(Request $request)
     {
+
        Comments::create([
            'user_id'=> Auth::user()->id,
            'comment_taxt'=>$request->input("comment"),
            'book_id' => $request->input("id"),
        ]);
        return redirect("detail?book=".$request->input("id"));
+
         
     }
 
