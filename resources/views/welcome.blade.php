@@ -33,7 +33,7 @@
    
    <div class="col-md-2">
     
-    <a href="#">
+    <a href="/detail?book={{$book->book_id}}">
    
       <img  src="{{$book->book_cover}}" alt="..." width="150" height="190">
     </a>

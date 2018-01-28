@@ -16,10 +16,10 @@ class BookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         
-        $book_id = 3;
+        $book_id = $request->input('book');
         $book_name = Books::where(['book_id' => $book_id])
                     ->first();
         
