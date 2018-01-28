@@ -121,7 +121,7 @@
                     {{$comment->comment_taxt}}
                 </div>
                 <div class="footer text-right">
-                    {{$comment->created_at->diffForHumans()}}
+                    {{$comment->updated_at->diffForHumans()}}
                 <div>
             </div>
             <!-- /.panecl -->
