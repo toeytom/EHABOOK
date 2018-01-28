@@ -78,7 +78,10 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
+                        <img src="{{$comment->user->user_ava}}"
+                        class="rounded-circle" alt="Cinque Terre" height="35" width="35" > 
                     {{$comment->user->user_name}}
+                   
                     @if(Auth::user()->id==$comment->user->id)
                     <span class="float-right">
 <<<<<<< HEAD
@@ -131,11 +134,16 @@
                     {{$comment->comment_taxt}}
                 </div>
                 <div class="footer text-right">
+<<<<<<< HEAD
                     {{$comment->created_at->diffForHumans()}}
                     <div>
                     </div>
                     <!-- /.panecl -->
                 </div>
+=======
+                    {{$comment->updated_at->diffForHumans()}}
+                <div>
+>>>>>>> 29da9f8ee979ca8564688e94d27bdb24d6c11b47
             </div>
 
 <<<<<<< HEAD
