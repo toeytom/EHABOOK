@@ -3,7 +3,6 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
-            
             <ul class="rate-area">
                 <input type="radio" id="5-star" name="rating" value="5" />
                 <label for="5-star" title="Amazing">5 stars</label>
@@ -16,15 +15,12 @@
                 <input type="radio" id="1-star" name="rating" value="1" />
                 <label for="1-star" title="Bad">1 star</label>
             </ul>
-        
         </div>
         <div class="col-sm-8"></div>
     </div>
     <div class="row">
         <div class="col-sm-4">
-            <center>
             <img border="0" src="{{ $book_name-> book_cover }}" width="200" height="300px">
-            </center>
             <br> ยอดจำหน่าย
             <h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;฿ {{ $book_name-> book_price }} </h1>
         </div>
