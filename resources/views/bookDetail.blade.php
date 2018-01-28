@@ -43,7 +43,7 @@
         </div>
         
   </div>
-  {{--  <div class="row">
+   <div class="row">
     <div class="col-sm-4"></div>
     <div class="col-sm-8">
         <div class="form-group">
@@ -52,7 +52,6 @@
         </div>
         <button type="button" class="btn btn-default">Submit</button>         
     </div>
-test coment boxc     hello--}}
 
     @forelse ($comments as $comment)
     <div class="row">

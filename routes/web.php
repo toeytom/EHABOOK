@@ -51,6 +51,7 @@ Route::get('/detail', function () {
 */
 Route::get('/detail','BookController@index');
 
+
 Route::get('/addbook','BookController@addbook')->name('addbook');
 Route::post('/addbook', 'BookController@addbooks')->name('addbook');
 
