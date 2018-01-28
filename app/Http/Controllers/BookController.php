@@ -9,6 +9,7 @@ use App\Comments;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use DateTime;
+use Auth;
 class BookController extends Controller
 {
     /**
@@ -27,7 +28,7 @@ class BookController extends Controller
         $comments =Comments::where(['book_id' => $book_id])->get();
 
         $comment_id = $request->input('book');
-        $comments =Comments::where(['comment_id' => $comment_id])->get();
+        $comments =Comments::where(['book_id' => $comment_id])->get();
 
         foreach($comments as $comment) {
             $comment->user = DB::table('users')->find($comment->user_id);
@@ -54,9 +55,15 @@ class BookController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function addcomment(Request $request)
     {
-        //
+       Comments::create([
+           'user_id'=> Auth::user()->id,
+           'comment_taxt'=>$request->input("comment"),
+           'book_id' => $request->input("id"),
+       ]);
+       return redirect("detail?book=".$request->input("id"));
+        
     }
 
     /**

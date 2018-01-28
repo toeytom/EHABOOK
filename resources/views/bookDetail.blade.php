@@ -45,12 +45,17 @@
   </div>
    <div class="row">
     <div class="col-sm-4"></div>
+    
     <div class="col-sm-8">
+            <form class="form-horizontal" method="POST" action="/comment">
+                {{ csrf_field() }}
         <div class="form-group">
             <label for="comment">Comment:</label>
-             <textarea class="form-control" rows="5" id="comment" style="resize:none"></textarea>
+            
+             <textarea class="form-control" rows="5" id="comment" style="resize:none" name="comment"></textarea>
+             <input type="hidden" name="id" value="{{$book_name->book_id}}">
         </div>
-        <button type="button" class="btn btn-default">Submit</button>         
+        <button type="submit" class="btn btn-default">Submit</button>     </form>    
     </div>
 
     @forelse ($comments as $comment)
