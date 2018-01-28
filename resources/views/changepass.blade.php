@@ -97,8 +97,8 @@
           <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
 
             <div class="row">
-              <div class="col-image">
-                <img src="image/mastercard.png">
+              <div align="center">
+                <img src="1.png">
               </div>
             </div>
             <br>
