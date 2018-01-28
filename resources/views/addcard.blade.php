@@ -22,6 +22,7 @@
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" id="payment-form" role="form" action="/addcard" >
                         {{ csrf_field() }}
+                        <input id="name" type="text" class="form-control" name="name" value="{{ old('card_no') }}" autofocus>
                         <div class="form-group{{ $errors->has('card_no') ? ' has-error' : '' }}">
                             <label for="card_no" class="col-md-4 control-label">Card No</label>
                             <div class="col-md-6">

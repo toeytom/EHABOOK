@@ -33,13 +33,13 @@
    
    <div class="col-md-2">
     
-    <form class="form-horizontal" method="GET" action="/detail">
-       <input type="hidden" name="book" id="book" value="{{$book->book_id}}">
+   
+       
       
       <img  src="{{$book->book_cover}}" alt="..." width="150" height="190">
     
      
-        <h4>{{$book->book_name}}</h4>
+      <a href="/detail?book={{$book->book_id}}"><h4>{{$book->book_name}}</h4></a>
         <p>{{$book->book_score}}</p>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star"></span>
@@ -54,7 +54,7 @@
        <p></p>
        <button type="submit" value="{{$book->book_id}}"class="btn btn-success">{{$book->book_price}}</button> 
 <p></p>
-    </form>
+    
 </div>
 
   @endforeach

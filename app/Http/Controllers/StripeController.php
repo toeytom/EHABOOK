@@ -10,7 +10,7 @@ use Input;
 use Auth;
 use App\User;
 use App\Users;
-use App\Cards;
+
 use Cartalyst\Stripe\Laravel\Facades\Stripe;
 use Stripe\Error\Card;
 class StripeController extends HomeController
@@ -100,7 +100,7 @@ class StripeController extends HomeController
         return redirect()->route('stripform');
     }    
     public function addcreditcard(Request $request)
-    {
+    {echo"dasd";
         $validator = Validator::make($request->all(), [
             'card_no' => 'required',
             'ccExpiryMonth' => 'required',
@@ -108,7 +108,7 @@ class StripeController extends HomeController
             'cvvNumber' => 'required',
         
         ]);
-        
+
         $input = $request->all();
         if ($validator->passes()) {           
             $input = array_except($input,array('_token'));            
@@ -124,43 +124,40 @@ class StripeController extends HomeController
                     ],
                 ]);
                 if (!isset($token['id'])) {
-                    \Session::put('error','The Stripe Token was not generated correctly');
+                    Session::put('error','The Stripe Token was not generated correctly');
                     return redirect()->route('addcard');
                 }
                 else
                 {
-                    $card = Cards::create([
+                    $card = Users::where('id',Auth::user()->id)->update([
                         
-                        'user_id' => Auth::user()->id,
-                        'name' => 'name',
-                        'stripe_id'=> $request->get('card_no'),
-                        'trial_ends_at'=>'2018-01-18 00:00:00',
-                        'ends_at'=>'2018-01-18 00:00:00',
-                        'stripe_plan'=>'999',
-                        'quantity'=>'99',
+                        'user_card_name' => $request->get('name'),
+                        'user_card_id'=> $request->get('card_no'),
+                        'user_card_cvv'=>$request->get('cvvNumber'),
+                        'user_card_exp_month'=>$request->get('ccExpiryMonth'),
+                        'user_card_exp_year'=>$request->get('ccExpiryYear'),
+                      
+                       
                         
 
                     ]);
-                    $profile = Users::where('id',Auth::user()->id)->
-                    update(['stripe_id'=>$request->get('card_no'),'card_last_four'=>$request->get('card_no'),'trial_ends_at'=>'2018-01-18 00:00:00','card_brand'=>$token['card']['brand']]);
 
-                    Session::put('success',$token['card']['cvc_check']);
-                    return redirect()->route('addcard');
+                    return redirect()->route('changepass');
                 }
             
                 
             } catch (Exception $e) {
                 \Session::put('error',$e->getMessage());
-                return redirect()->route('addcard');
+                return redirect()->route('changepass');
             } catch(\Cartalyst\Stripe\Exception\CardErrorException $e) {
                 \Session::put('error',$e->getMessage());
-                return redirect()->route('addcard');
+                return redirect()->route('changepass');
             } catch(\Cartalyst\Stripe\Exception\MissingParameterException $e) {
                 \Session::put('error',$e->getMessage());
-                return redirect()->route('addcard');
+                return redirect()->route('changepass');
             }
         }
         \Session::put('error','All fields are required!!');
-        return redirect()->route('addcard');
+        return redirect()->route('changepass');
     }    
 }
