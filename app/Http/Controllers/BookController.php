@@ -22,13 +22,13 @@ class BookController extends Controller
         $book_id = $request->input('book');
         $book_name = Books::where(['book_id' => $book_id])
                     ->first();
-<<<<<<< HEAD
+
         
         $comments =Comments::where(['book_id' => $book_id])->get();
-=======
+
         $comment_id = $request->input('book');
         $comments =Comments::where(['comment_id' => $comment_id])->get();
->>>>>>> 821e4d38a6f5a0473a5ab8442609e3a2e989b601
+
         foreach($comments as $comment) {
             $comment->user = DB::table('users')->find($comment->user_id);
         }
