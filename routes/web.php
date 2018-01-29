@@ -42,7 +42,7 @@ Route::post('/addcard', 'StripeController@addcreditcard');
 Route::get('/test',function(){
     return view('/auth/passwords/test');
 });
-Route::get('/read','ReadController@index');
+Route::post('/read','ReadController@index');
 
 /*
 Route::get('/detail', function () {

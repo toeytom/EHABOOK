@@ -35,7 +35,7 @@ http://sourceforge.net/adobe/cmap/wiki/License/
 
 
   </head>
-  <input type="hidden" name="country" id="file" value="a.pdf ">
+  <input type="hidden" name="country" id="file" value="{{$book->book_demo}}">
   <body tabindex="1" class="loadingInProgress">
     <div id="outerContainer">
 

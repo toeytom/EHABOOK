@@ -41,18 +41,21 @@
                 <br>
             </p>
             
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    ซื้อเลย
-                  </button>
-
-            <button type="button" class="btn btn-light">ทดลองอ่าน</button>
+            
+<form method='POST' action='/read'>
+    {{ csrf_field() }}
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        ซื้อเลย
+      </button>
+      <input type="hidden" name="book_id" value="{{$book_name->book_id}}">
+            <button type="submit" class="btn btn-light">ทดลองอ่าน</button></form>
         </div>
 
     </div>
     <div class="row">
 
 
-
+            @if(Auth::user())
         <div class="col-sm-12">
             <form class="form-horizontal" method="POST" action="/comment">
                 {{ csrf_field() }}
@@ -67,7 +70,9 @@
             </form>
 
         </div>
+        @endif
     </div>
+    
     <div class="col-sm-12">
         <br>
 
@@ -81,16 +86,22 @@
                         <img src="{{$comment->user->user_ava}}"
                         class="rounded-circle" alt="Cinque Terre" height="35" width="35" > 
                     {{$comment->user->user_name}}
-                   
+                   @if(Auth::user())
                     @if(Auth::user()->id==$comment->user->id)
                     <span class="float-right">
 
                        
-
+                        <form class="form-horizontal" method="POST" action="/dcomment">
+                            {{ csrf_field() }}
+                        <input type="hidden" name="comment" value="{{$comment->comment_id}}">
+                        <input type="hidden" name="id" value="{{$book_name->book_id}}">
+                        <button type="button" class="btn btn-warning"data-toggle="modal" data-target="#{{$comment->comment_id}}">แก้ไข</button>
+                        <button type="submit" class="btn btn-danger">ลบ</button>
+                        </form>
                            
                                 
                                
-                                <button type="button" class="btn btn-warning"data-toggle="modal" data-target="#{{$comment->comment_id}}">แก้ไข</button>
+                        
                                 
                                 <div class="modal fade" id="{{$comment->comment_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
@@ -119,14 +130,10 @@
                                         </div>
                                       </div>
                    
-                    <form class="form-horizontal" method="POST" action="/dcomment">
-                        {{ csrf_field() }}
-                    <input type="hidden" name="comment" value="{{$comment->comment_id}}">
-                    <input type="hidden" name="id" value="{{$book_name->book_id}}">
-                    <button type="submit" class="btn btn-danger">ลบ</button>
-                    </form>
+                 
 
                     </span>
+                    @endif
                     @endif
                 </div>
                 <div class="card-body">
@@ -156,25 +163,29 @@
                                 <div align="center">
                           <h5 class="modal-title" id="exampleModalLabel">ซื้อหนังสือเล่มนี้?</h5>
                                 </div>
+                                
                             </div>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
+                     
                         </div>
+                        <form class="form-horizontal" method="GET" action="/stripe">
+                            {{ csrf_field() }}
                         <div class="modal-body">
                             <div align="center">
                                 {{ $book_name-> book_name }} <br>
                                 ฿ {{ $book_name-> book_price }}
+                                <input type="hidden" name="id" value="{{$book_name->book_id}}">
+                                <input type="hidden" name="price" value="{{$book_name->book_price}}">
                             </div>
                         </div>
                         <div class="modal-footer">
                         <div class="col-md-12">
                             <div align="center">
-                            <button type="button" class="btn btn-success" >ใช่</button>
+                            <button type="submit" class="btn btn-success" >ใช่</button>
                             <button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
                             </div>
                         </div>
                       </div>
+                    </form>
                     </div>
                     </div>
                   </div>

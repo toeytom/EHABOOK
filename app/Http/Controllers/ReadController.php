@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Users;
+use App\Books;
 
 class ReadController extends Controller
 {
@@ -18,9 +19,10 @@ class ReadController extends Controller
         $this->middleware('user');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        return view('read');
+        $book=Books::where('book_id',$request->get('book_id'))->first();
+        return view('read',compact('book'));
     }
 
     /**

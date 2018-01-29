@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Validator;
 use URL;
 use Session;
@@ -10,6 +11,7 @@ use Input;
 use Auth;
 use App\User;
 use App\Users;
+use App\Bills;
 
 use Cartalyst\Stripe\Laravel\Facades\Stripe;
 use Stripe\Error\Card;
@@ -27,9 +29,10 @@ class StripeController extends HomeController
      *
      * @return \Illuminate\Http\Response
      */
-    public function payWithStripe()
+    public function payWithStripe(Request $request)
     {
-        return view('paywithstripe');
+        $card=Users::where('id',Auth::user()->id)->first();
+        return view('paywithstripe',compact('request','card'));
     }
     public function addcard()
     {
@@ -51,7 +54,9 @@ class StripeController extends HomeController
             'amount' => 'required',
         ]);
         
-        $input = $request->all();
+        $input[] = $request->all();
+        
+      
         if ($validator->passes()) {           
             $input = array_except($input,array('_token'));            
             $stripe = Stripe::make('sk_test_HtS63Cm0bwJzzFcMBHl5yD0i');
@@ -76,11 +81,12 @@ class StripeController extends HomeController
                     'description' => 'Add in wallet',
                 ]);
                 if($charge['status'] == 'succeeded') {
-                    /**
-                    * Write Here Your Database insert logic.
-                    */
+                 
+                   DB::table('bills')->insert(
+                    ['bill_price'=>$request->get('amount'), 'book_id'=>$request->get('bookid'),'user_id'=>Auth::user()->id,]
+                );
                     \Session::put('success','Money add successfully in wallet');
-                    return redirect()->route('stripform');
+                    return redirect('/home');
                 } else {
                     \Session::put('error','Money not add in wallet!!');
                     return redirect()->route('stripform');
@@ -100,7 +106,7 @@ class StripeController extends HomeController
         return redirect()->route('stripform');
     }    
     public function addcreditcard(Request $request)
-    {echo"dasd";
+    {
         $validator = Validator::make($request->all(), [
             'card_no' => 'required',
             'ccExpiryMonth' => 'required',
