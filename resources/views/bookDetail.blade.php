@@ -131,7 +131,7 @@
                                         <div class="modal-body">
                                             <input type="hidden" name="comment" value="{{$comment->comment_id}}">
                                             <input type="hidden" name="id" value="{{$book_name->book_id}}">
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" name="commentt" rows="3"></textarea>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" name="commentt" rows="3">{{$comment->comment_taxt}}</textarea>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="submit" class="btn btn-warning">แก้ไข</button>
