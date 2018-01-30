@@ -18,4 +18,12 @@ class ReadController extends Controller
     {
         $this->middleware('user');
     }
+    public function mybook(Request $request)
+    {
+
+       Comments::where('comment_id',$request->input("comment"))->delete();
+       return redirect("detail?book=".$request->input("id"));
+
+        
+    }
 }
