@@ -25,7 +25,7 @@
         </div>
       
       </div>
-      <br>    
+    
     <p>
     </p>
       <div class="row">
@@ -52,15 +52,13 @@
   
 
       <a href="/detail?book={{$book->book_id}}"><h4>{{$book->book_name}}</h4></a>
-        <p>{{$book->book_score}}</p>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
+      
         @for($i=0;$i<5;$i++)
-        @if($i<4)
-        <span class="fa fa-star"></span>
+        @if($i<$book->book_score)
+        <span class="fa fa-star checked"></span>
         @else
        
-        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star "></span>
         @endif
        @endfor
        <p></p>

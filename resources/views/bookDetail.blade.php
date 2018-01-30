@@ -61,7 +61,7 @@
                         <button type="button" class="btnBuy btn-primary" data-toggle="modal" data-target="#exampleModal">
                             ซื้อเลย
                         </button>
-                        <input type="hidden" name="book_id" value="{{$book_name->book_id}}">
+                        <input type="hidden" name="book_id" value="{{$book_name->book_demo}}">
                         <button type="submit" class="btnTest btn-light" center-block>ทดลองอ่าน</button>
                 </form>
                 </div>

@@ -17,16 +17,8 @@
 
 <h4>{{$book->book->book_name}}</h4>
         <p>{{$book->book_score}}</p>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-        @for($i=0;$i<5;$i++)
-        @if($i<4)
-        <span class="fa fa-star"></span>
-        @else
-       
-        <span class="fa fa-star checked"></span>
-        @endif
-       @endfor
+        
+        <div id="rateYo"></div>
        <p></p>
        <form method='POST' action='/read'>
         {{ csrf_field() }}
@@ -42,4 +34,7 @@
 </div>
 @endsection
 @section('javascript')
+<script>
+
+</script>
 @endsection
