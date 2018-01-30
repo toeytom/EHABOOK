@@ -67,6 +67,7 @@ class BookController extends Controller
 
         
     }
+    
     public function dcomment(Request $request)
     {
 
