@@ -15,7 +15,30 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 <link rel="stylesheet" href="fontawesome-stars.css">
 
-    <style>
+
+
+    <style type="text/css">  
+
+
+    @font-face {
+      font-family: SukhumvitSet-SemiBold;
+      src: url('SukhumvitFonts/SukhumvitSet-SemiBold.ttf');
+
+      font-family: SukhumvitSet-Bold;
+      src: url('SukhumvitFonts/SukhumvitSet-Bold.ttf');
+
+      font-family: SukhumvitSet-Light;
+      src: url('SukhumvitFonts/SukhumvitSet-Light.ttf');
+
+      font-family: SukhumvitSet-Text;
+      src: url('SukhumvitFonts/SukhumvitSet-Text.ttf');
+
+      font-family: SukhumvitSet-Thin;
+      src: url('SukhumvitFonts/SukhumvitSet-Thin.ttf');
+
+    }
+
+
     body { 
       background: url('{{asset("bg.jpg")}}') no-repeat center center fixed; 
       -webkit-background-size: cover;
@@ -24,14 +47,21 @@
       background-size: cover;
     
     }
+    
+    *{
+    font-family: SukhumvitSet-SemiBold;
+    
+    } 
+
 
 
     h3 {
       color:darkgrey;
       margin-left:20px;
       margin-top:20px;
-      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-family: SukhumvitSet-Light;
       font-weight: lighter;
+    
   }
   
   
@@ -53,7 +83,7 @@
       overflow:hidden;
       white-space:nowrap;
       cursor:pointer;
-      font-size:200%;
+      font-size:150%;
       line-height:1.2;
       color:lightgrey;
       text-shadow:1px 1px #bbb;
@@ -66,7 +96,7 @@
   .rate-area > input:checked ~ label {
       color: gold;
       text-shadow:1px 1px #c60;
-      font-size:200% !important;
+      font-size:150% !important;
   }
   
   .rate-area:not(:checked) > label:hover,
@@ -151,10 +181,41 @@
   color: #ffffff!important;
 }
 
-   
+
+
+.priceOfBook h1{
+  font-family: SukhumvitSet-Bold;
+  color: #ff0000;
+  text-align: center;
+  font-size: 50px;
+
+}
     
-        
-    
+
+.main-book-detail{
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 5px;
+      
+}
+
+.buttonBuyAndTest{
+  text-align: center;
+}
+
+.btnBuy{
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #f44336;
+}
+.btnTest{
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+
+
     
           
     
