@@ -57,7 +57,7 @@ Route::post('/addbook', 'BookController@addbooks')->name('addbook');
 Route::post('/comment', 'BookController@addcomment');
 Route::post('/dcomment', 'BookController@dcomment');
 Route::post('/ecomment', 'BookController@ecomment');
-Route::get('/mybook', 'BookController@mybook');
+Route::get('/mybook', 'MybookController@mybook');
 
 
 

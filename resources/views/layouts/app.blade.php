@@ -257,7 +257,7 @@
                   <a class="nav-link" href="/">ออกใหม่ <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active ">
-                  <a class="nav-link" href="/changepass">โปรโมชั่น</a>
+                  <a class="nav-link" href="">โปรโมชั่น</a>
                 </li>
 
                 <li class="nav-item dropdown active">
@@ -273,18 +273,18 @@
                 </li>
                
                   <li class="nav-item active ">
-                    <a class="nav-link" href="/changepass">หนังสือของฉัน</a>
+                    <a class="nav-link" href="/mybook">หนังสือของฉัน</a>
                   </li>
                   <li class="nav-item active ">
-                    <a class="nav-link" href="/changepass">ผลงานของฉัน</a>
+                    <a class="nav-link" href="">ผลงานของฉัน</a>
                   </li>
                   
                
                   <li class="nav-item active ">
-                    <a class="nav-link" href="/changepass">User Guide</a>
+                    <a class="nav-link" href="">User Guide</a>
                   </li>
                   <li class="nav-item active ">
-                    <a class="nav-link" href="/changepass">ติดต่อเรา</a>
+                    <a class="nav-link" href="">ติดต่อเรา</a>
                   </li>
                 
             </ul>
