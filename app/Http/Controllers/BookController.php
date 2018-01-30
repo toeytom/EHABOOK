@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Books;
+use App\Bills;
 use App\Comments;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
@@ -25,6 +26,15 @@ class BookController extends Controller
                     ->first();
         
         $comments =Comments::where(['book_id' => $book_id])->get();
+        $status = 0;
+        if(Auth::user())
+        {
+            $check=DB::table('bills')->where(['book_id'=>$book_id],['user_id'=>Auth::user()->id])->first();
+            if($check)
+            {
+                $status=1;
+            }
+        }
 
 
      
@@ -36,7 +46,7 @@ class BookController extends Controller
 
 
 
-        return view('bookDetail',compact('book_name', 'comments'));
+        return view('bookDetail',compact('book_name', 'comments','status'));
     }
 
     /**
