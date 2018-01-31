@@ -40,7 +40,7 @@
 
 
     body { 
-      background: url('{{asset("bg.jpg")}}') no-repeat center center fixed; 
+      background: url('{{asset("rainbow_pastel.jpg")}}') no-repeat center center fixed; 
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -49,15 +49,15 @@
     }
     
     *{
-    font-family:SukhumvitSet-SemiBold;
-    
+    font-family: SukhumvitSet-SemiBold;
+
     } 
     .checked {
       color: orange;
   }
 
 
-    h3 {
+    h3{
       color:darkgrey;
       margin-left:20px;
       margin-top:20px;
@@ -65,6 +65,14 @@
       font-weight: lighter;
     
   }
+
+  .book_detail h4{
+    color: black;
+    font-family: SukhumvitSet-SemiBold;
+  
+
+  }
+
   
   
   .rate-area {

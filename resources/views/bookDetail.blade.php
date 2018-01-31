@@ -22,7 +22,10 @@
 
         <div class="row">
             <div class="col-md-4 col-sm-4 col-xs-4">
-                <img border="0" src="{{ $book_name-> book_cover }}" width="90%" height="80%">
+                <img border="0" src="{{ $book_name-> book_cover }}" width=350px; height=500px max-width="100%" max-height="100%">  
+                <!-- 90 80 -->
+                <!-- 350 500 -->
+               
                 <br>
                 <br>
                 <div class="priceOfBook">

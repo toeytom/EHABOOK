@@ -112,7 +112,6 @@
 
           <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
 
-
             <div class="row">
                 <div class="col-sm-12">
                     <div align="center">
