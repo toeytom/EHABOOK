@@ -50,12 +50,12 @@
     
     *{
     font-family: SukhumvitSet-SemiBold;
-    
+
     } 
 
 
 
-    h3 {
+    h3{
       color:darkgrey;
       margin-left:20px;
       margin-top:20px;
@@ -63,6 +63,14 @@
       font-weight: lighter;
     
   }
+
+  .book_detail h4{
+    color: #ffff;
+    font-family: SukhumvitSet-SemiBold;
+  
+
+  }
+
   
   
   .rate-area {

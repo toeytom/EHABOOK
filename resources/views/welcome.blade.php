@@ -50,8 +50,8 @@
 
     </a>
   
-
-      <a href="/detail?book={{$book->book_id}}"><h4>{{$book->book_name}}</h4></a>
+    <div class="book_detail"> 
+      <a href="/detail?book={{$book->book_id}}"><br><h4>{{$book->book_name}}</h4></a>
         <p>{{$book->book_score}}</p>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star"></span>
@@ -67,14 +67,14 @@
        <button type="submit" value="{{$book->book_id}}"class="btn btn-success">{{$book->book_price}}</button> 
 <p></p>
     
-
+    </div>
 </div>
 
   @endforeach
 </div>
 
 
-
+<hr>
 <footer class="container-fluid" align="center">
 
 
