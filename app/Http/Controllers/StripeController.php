@@ -32,7 +32,12 @@ class StripeController extends HomeController
     public function payWithStripe(Request $request)
     {
         $card=Users::where('id',Auth::user()->id)->first();
+        if($card->user_card_id){
         return view('paywithstripe',compact('request','card'));
+        }
+        else{
+        return view('addcard');
+        }
     }
     public function addcard()
     {
@@ -85,7 +90,7 @@ class StripeController extends HomeController
                    DB::table('bills')->insert(
                     ['bill_price'=>$request->get('amount'), 'book_id'=>$request->get('bookid'),'user_id'=>Auth::user()->id,]
                 );
-                    \Session::put('success','Money add successfully in wallet');
+                    \Session::put('success','การซื้อของคุณสำเร็จ');
                     return redirect('/home');
                 } else {
                     \Session::put('error','Money not add in wallet!!');
@@ -147,7 +152,7 @@ class StripeController extends HomeController
                         
 
                     ]);
-
+                    \Session::put('success','เพิ่มบัตรสำเร็จ');
                     return redirect()->route('changepass');
                 }
             

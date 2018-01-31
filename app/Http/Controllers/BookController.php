@@ -29,7 +29,7 @@ class BookController extends Controller
         $status = 0;
         if(Auth::user())
         {
-            $check=DB::table('bills')->where(['book_id'=>$book_id],['user_id'=>Auth::user()->id])->first();
+            $check=DB::table('bills')->where('book_id',$book_id)->where('user_id',Auth::user()->id)->first();
             if($check)
             {
                 $status=1;

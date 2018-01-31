@@ -12,7 +12,7 @@
                 <?php Session::forget('success');?>
                 @endif
                 @if ($message = Session::get('error'))
-                <div class="custom-alerts alert alert-danger fade in">
+                <div class="alert alert-danger" role="alert" id="alertf">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
                     {!! $message !!}
                 </div>
@@ -23,13 +23,15 @@
                     <form class="form-horizontal" method="POST" id="payment-form" role="form" action="/addcard" >
                         {{ csrf_field() }}
                         <div class="form-group">
-                            <label for="name">ชื่อผู้ถือบัตร:</label>
-                            <input type="text" class="form-control" id="name" name="name">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your privacy infomation with anyone else.</small>
+                            <label for="name"class="col-md-4 control-label" >ชื่อผู้ถือบัตร:</label>
+                            <div class="col-md-6">
+                            <input type="text" class="form-control" id="name" name="name" autofocus>
+                       
                           </div>
-                        <input id="name" type="text" class="form-control" name="name" value="{{ old('card_no') }}" autofocus>
+                        </div>
+                       
                         <div class="form-group{{ $errors->has('card_no') ? ' has-error' : '' }}">
-                            <label for="card_no" class="col-md-4 control-label">>เลขบัตร:</label>
+                            <label for="card_no" class="col-md-4 control-label">เลขบัตร:</label>
                             <div class="col-md-6">
                                 <input id="card_no" type="text" class="form-control" name="card_no" value="{{ old('card_no') }}" autofocus>
                                 @if ($errors->has('card_no'))
@@ -98,4 +100,12 @@
     </div>
 </div>
 
+@endsection
+@section('javascript')
+
+<script>
+        $("#alertf").fadeTo(2000, 500).slideUp(500, function(){
+            $("#alertf").slideUp(500);
+        });
+</script>
 @endsection

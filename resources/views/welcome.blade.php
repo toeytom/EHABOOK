@@ -1,6 +1,13 @@
 @extends('layouts.app')
 @section('content')
 
+@if ($message = Session::get('success'))
+<div class="alert alert-success" role="alert" id="alertf">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+    {!! $message !!}
+</div>
+<?php Session::forget('success');?>
+@endif
 <div align="center">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -82,6 +89,11 @@
 @endsection
 @section('javascript')
 <script>
+    $("#alertf").fadeTo(2000, 500).slideUp(500, function(){
+        $("#alertf").slideUp(500);
+    });
+</script>
+<script>
   
     $(function () {
  
@@ -95,6 +107,7 @@
     // Setter
     $("#rateYo").rateYo("option", "normalFill", "#B0B0B0"); //returns a jQuery Element
 </script>
+
 @endsection
 
 
