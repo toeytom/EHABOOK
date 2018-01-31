@@ -71,7 +71,7 @@ class StripeController extends HomeController
                 ]);
                 if (!isset($token['id'])) {
                     \Session::put('error','The Stripe Token was not generated correctly');
-                    return redirect()->route('stripform');
+                    return redirect()->route('addcard');
                 }
             
                 $charge = $stripe->charges()->create([
@@ -89,21 +89,21 @@ class StripeController extends HomeController
                     return redirect('/home');
                 } else {
                     \Session::put('error','Money not add in wallet!!');
-                    return redirect()->route('stripform');
+                    return redirect()->route('addcard');
                 }
             } catch (Exception $e) {
                 \Session::put('error',$e->getMessage());
-                return redirect()->route('stripform');
+                return redirect()->route('addcard');
             } catch(\Cartalyst\Stripe\Exception\CardErrorException $e) {
                 \Session::put('error',$e->getMessage());
-                return redirect()->route('stripform');
+                return redirect()->route('addcard');
             } catch(\Cartalyst\Stripe\Exception\MissingParameterException $e) {
                 \Session::put('error',$e->getMessage());
-                return redirect()->route('stripform');
+                return redirect()->route('addcard');
             }
         }
         \Session::put('error','All fields are required!!');
-        return redirect()->route('stripform');
+        return redirect()->route('addcard');
     }    
     public function addcreditcard(Request $request)
     {
@@ -154,16 +154,16 @@ class StripeController extends HomeController
                 
             } catch (Exception $e) {
                 \Session::put('error',$e->getMessage());
-                return redirect()->route('changepass');
+                return redirect()->route('addcard');
             } catch(\Cartalyst\Stripe\Exception\CardErrorException $e) {
                 \Session::put('error',$e->getMessage());
-                return redirect()->route('changepass');
+                return redirect()->route('addcard');
             } catch(\Cartalyst\Stripe\Exception\MissingParameterException $e) {
                 \Session::put('error',$e->getMessage());
-                return redirect()->route('changepass');
+                return redirect()->route('addcard');
             }
         }
         \Session::put('error','All fields are required!!');
-        return redirect()->route('changepass');
+        return redirect()->route('addcard');
     }    
 }

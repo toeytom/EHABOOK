@@ -100,7 +100,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div align="center">
-                        <img src="1.png" width="40%" height="25%">
+                        <img src="1.png" width="40%" height="70%">
                     <div style="text-align:center;">
                         <br>
                             <button type="button" class="btn btn-success" 
@@ -110,7 +110,7 @@
                 </div>
 
     
-                <img src="1.png" >
+              
 
             <br>
 
