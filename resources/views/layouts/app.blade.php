@@ -72,9 +72,16 @@
   
 
   }
+  
+  #buttonn{
+    position: absolute;
+    bottom: -15%;
+    left: 1%; right: 1%;
+    text-align: center;
+    margin: aurto;
+  }
 
-  
-  
+
   .rate-area {
       float:left;
       border-style: none;
@@ -131,8 +138,8 @@
       left:2px;
   }
   h2{
-    margin-left:20px;
-    font-family: SukhumvitSet-Light;
+    margin-left:25px;
+    font-family: SukhumvitSet-Bold;
   }
 
     .main-login{
@@ -219,7 +226,7 @@
   width: 100px;
   height: 50px;
   border-radius: 5px;
-  background-color: #f44336;
+  /* background-color: #f44336; */
 }
 .btnTest{
   width: 100px;
@@ -227,6 +234,16 @@
   border-radius: 5px;
 }
 
+
+.main-add-card{
+  background: #ffff;
+  width: 100%;
+  border: 5;
+  margin: 0 0 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
 
 
     

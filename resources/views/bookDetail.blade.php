@@ -74,6 +74,7 @@
                         </button>
                         <input type="hidden" name="book_id" value="{{$book_name->book_demo}}">
                         <button type="submit" class="btnTest btn-light" center-block>ทดลองอ่าน</button>
+                    </div>
                 </form>
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -143,7 +144,7 @@
 
     @forelse ($comments as $comment)
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
                     <img src="{{$comment->user->user_ava}}" class="rounded-circle" alt="Cinque Terre" height="35" width="35"> {{$comment->user->user_name}} @if(Auth::user()) @if(Auth::user()->id==$comment->user->id)

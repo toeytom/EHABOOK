@@ -35,9 +35,9 @@
     
     <p>
     </p> <?php $count =0; ?>
-    <br></br>
-   
-     <h2 style="text-align:left" >หนังสือมาใหม่</h2>
+    <hr>
+
+     <h2 style="text-align:left" >หนังสือมาใหม่</h2><br>
    
       <div class="row">
        
@@ -64,9 +64,9 @@
      
 
     </a>
-  
-
-      <a href="/detail?book={{$book->book_id}}"><h4>{{$book->book_name}}</h4></a>
+    
+      <div class="book_detail">
+      <a href="/detail?book={{$book->book_id}}"><br><h4>{{$book->book_name}}</h4></a>
       
         @for($i=0;$i<5;$i++)
         @if($i<$book->book_score)
@@ -77,17 +77,24 @@
         @endif
        @endfor
        <p></p>
-       <button type="submit" value="{{$book->book_id}}"class="btn btn-success">{{$book->book_price}}</button> 
+       <div id="buttonn">
+            <button type="submit" value="{{$book->book_id}}"class="btn btn-success">฿ {{$book->book_price}}</button> 
+      </div>
 <p></p>
     
-
+  </div>
 </div>
+
 
   @endforeach
 </div>
 <br></br>
+<br></br>
+<hr>
+
+
 <?php $count =0; ?>
-<h2 style="text-align: left"> Top Rating</h2>
+<h2 style="text-align: left"> Top Rating</h2><br>
  <div class="row">
   
 @foreach($books as $book)
@@ -114,8 +121,8 @@
 
 </a>
 
-
- <a href="/detail?book={{$book->book_id}}"><h4>{{$book->book_name}}</h4></a>
+<div class="book_detail">
+ <a href="/detail?book={{$book->book_id}}"><br><h4>{{$book->book_name}}</h4></a>
  
    @for($i=0;$i<5;$i++)
    @if($i<$book->book_score)
@@ -126,17 +133,23 @@
    @endif
   @endfor
   <p></p>
-  <button type="submit" value="{{$book->book_id}}"class="btn btn-success">{{$book->book_price}}</button> 
+  <div id="buttonn">
+    <button type="submit" value="{{$book->book_id}}"class="btn btn-success">฿ {{$book->book_price}}</button> 
+  </div>
 <p></p>
 
 
+  </div>
 </div>
-
 @endforeach
 </div>
 <br></br>
+<br></br>
+<hr>
+
+
 <?php $count =0; ?>
-     <h2 style="text-align:left1px ">หนังสือขายดี</h2>
+     <h2 style="text-align:left ">หนังสือขายดี</h2><br>
       <div class="row">
        
     @foreach($books as $book)
@@ -162,7 +175,8 @@
      
 
     </a>
-  
+
+
     <div class="book_detail"> 
       <a href="/detail?book={{$book->book_id}}"><br><h4>{{$book->book_name}}</h4></a>
         
@@ -175,7 +189,9 @@
         @endif
        @endfor
        <p></p>
-       <button type="submit" value="{{$book->book_id}}"class="btn btn-success">{{$book->book_price}}</button> 
+       <div id="buttonn">
+        <button type="submit" value="{{$book->book_id}}"class="btn btn-success">฿ {{$book->book_price}}</button> 
+       </div> 
 <p></p>
     
     </div>
@@ -183,6 +199,9 @@
 
   @endforeach
 </div>
+<br></br>
+<br></br>
+<br></br>
 
 
 <hr>

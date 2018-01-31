@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
+<div class="main-add-card">
+    
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -18,6 +20,7 @@
                 </div>
                 <?php Session::forget('error');?>
                 @endif
+                <div class="addCardMain">
                 <div class="panel-heading">เพิ่มบัตรเครดิต</div>
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" id="payment-form" role="form" action="/addcard" >
@@ -30,7 +33,7 @@
                           </div>
                         </div>
                        
-                        <div class="form-group{{ $errors->has('card_no') ? ' has-error' : '' }}">
+                        <div class="addcardForm form-group{{ $errors->has('card_no') ? ' has-error' : '' }}">
                             <label for="card_no" class="col-md-4 control-label">เลขบัตร:</label>
                             <div class="col-md-6">
                                 <input id="card_no" type="text" class="form-control" name="card_no" value="{{ old('card_no') }}" autofocus>
@@ -86,6 +89,7 @@
                             </div>
                         </div>  --}}
                         
+                        <div class="btnAddCard">
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
@@ -93,11 +97,14 @@
                                 </button>
                             </div>
                         </div>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 
 @endsection
