@@ -36,7 +36,9 @@
     <p>
     </p> <?php $count =0; ?>
     <br></br>
-     <h2 style="text-align: left">หนังสือมาใหม่</h2>
+   
+     <h2 style="text-align:left" >หนังสือมาใหม่</h2>
+   
       <div class="row">
        
     @foreach($books as $book)
@@ -134,7 +136,7 @@
 </div>
 <br></br>
 <?php $count =0; ?>
-     <h2 style="text-align: left">หนังสือขายดี</h2>
+     <h2 style="text-align:left1px ">หนังสือขายดี</h2>
       <div class="row">
        
     @foreach($books as $book)

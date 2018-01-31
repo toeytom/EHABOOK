@@ -122,7 +122,9 @@
       top:2px;
       left:2px;
   }
-  
+  h2{
+    margin-left:20px;
+  }
 
     .main-login{
       background-color: #fff;
