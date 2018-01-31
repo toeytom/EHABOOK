@@ -49,7 +49,7 @@
     }
     
     *{
-    font-family: SukhumvitSet-SemiBold;
+    font-family:SukhumvitSet-SemiBold;
     
     } 
     .checked {
@@ -124,6 +124,7 @@
   }
   h2{
     margin-left:20px;
+    font-family: SukhumvitSet-Light;
   }
 
     .main-login{
