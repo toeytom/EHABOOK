@@ -2,9 +2,25 @@
 @section('content')
 
   <div class="container">
+        @if ($message = Session::get('success'))
+                <div class="alert alert-danger"id="alertf">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                    {!! $message !!}
+                </div>
+                <?php Session::forget('success');?>
+                @endif
+                @if ($message = Session::get('error'))
+                <div class="alert alert-danger" role="alert" >
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                    {!! $message !!}
+                </div>
+                <?php Session::forget('error');?>
+                @endif
+       
       <div class="main-login main-centerp">
+           
       <div class="formEditPage col-md-12 offset-md-0">
-
+           
 
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
           <li class="nav-item">
@@ -99,7 +115,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div align="center">
-                        <img src="1.png" width="40%" height="25%">
+                        <img src="1.png" width="40%" height="70%">
                     <div style="text-align:center;">
                         <br>
                             <button type="button" class="btn btn-success" 
@@ -107,6 +123,10 @@
                            </div>
                     </div>
                 </div>
+
+    
+              
+
             <br>
 
 
@@ -180,93 +200,14 @@
 
   @endsection
   @section('javascript')
-  <script>
-      $(document).ready(function() {
-          var check1=0,check2=0,check3=0;
-          $('#old-password').change(function(){
-              if($('#old-password').val().length<8)
-              {
-                  $('#old-password').css("border-color", "red");
-                  check1=0;
-              }
-              else
-              {
-                  $('#old-password').css("border-color", "green");
-                  check1=1;
-              }
-
-              if(check3==1&&check2==1&&check1==1)
-              {
-                  $('#but').prop('disabled', false);
-                  check1=0,check2=0,check3=0;
-
-              }
-              else
-              {
-                  $('#but').prop('disabled', true);
-              }
-          })
-          
-          $('#password').change(function(){
-              if($('#password').val().length<8)
-              {
-                  $('#password').css("border-color", "red");
-                  check2=0;
-              }
-              else if($('#password-confirm').val()==$('#password').val()){
-                $('#password').css("border-color", "green");
-                  $('#password-confirm').css("border-color", "green");
-                  check2=1;
-                  check3=1;
-
-              }
-              else
-              {
-                $('#password').css("border-color", "green");
-                check2=1;
-              }
-              if(check3==1&&check2==1&&check1==1)
-              {
-                  $('#but').prop('disabled', false);
-                  check1=0,check2=0,check3=0;
-
-              }
-              else
-              {
-                  $('#but').prop('disabled', true);
-              }
-          })
-          
-          $('#password-confirm').change(function() {
-              if($('#password-confirm').val()!=$('#password').val())
-              {
-                  $('#password-confirm').css("border-color", "red");
-                  check3=0;
-              }
-              else
-              {
-                $('#password').css("border-color", "green");
-                  $('#password-confirm').css("border-color", "green");
-                  check3=1;
-                  check2=1;
-              }
-              if(check3==1&&check2==1&&check1==1)
-              {
-                  $('#but').prop('disabled', false);
-                  check1=0,check2=0,check3=0;
-
-              }
-              else
-              {
-                  $('#but').prop('disabled', true);
-              }
-          })
-      });
-  </script>
+  
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script>
+        $("#alertf").fadeTo(2000, 500).slideUp(500, function(){
+            $("#alertf").slideUp(500);
+        });
+</script>
 
     @endsection
-
-</html>

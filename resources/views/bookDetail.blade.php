@@ -55,7 +55,15 @@
                     <br>
                 </p>
 
-
+                @if($status)
+                <form method='POST' action='/read'>
+                    {{ csrf_field() }}
+                    <div class="buttonBuyAndTest">
+                        
+                        <input type="hidden" name="book_id" value="{{$book_name->book_address}}">
+                        <button type="submit" class="btn btn-success" center-block>อ่าน</button>
+                </form>
+                @else
 
 
                 <form method='POST' action='/read'>
@@ -64,9 +72,44 @@
                         <button type="button" class="btnBuy btn-primary" data-toggle="modal" data-target="#exampleModal">
                             ซื้อเลย
                         </button>
-                        <input type="hidden" name="book_id" value="{{$book_name->book_id}}">
+                        <input type="hidden" name="book_id" value="{{$book_name->book_demo}}">
                         <button type="submit" class="btnTest btn-light" center-block>ทดลองอ่าน</button>
                 </form>
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div class="col-md-12">
+                                        <div align="center">
+                                            <h5 class="modal-title" id="exampleModalLabel">ซื้อหนังสือเล่มนี้?</h5>
+                                        </div>
+    
+                                    </div>
+    
+                                </div>
+                                <form class="form-horizontal" method="GET" action="/stripe">
+                                    {{ csrf_field() }}
+                                    <div class="modal-body">
+                                        <div align="center">
+                                            {{ $book_name-> book_name }}
+                                            <br> ฿ {{ $book_name-> book_price }}
+                                            <input type="hidden" name="id" value="{{$book_name->book_id}}">
+                                            <input type="hidden" name="price" value="{{$book_name->book_price}}">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="col-md-12">
+                                            <div align="center">
+                                                <button type="submit" class="btn btn-success">ใช่</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                @endif
                 </div>
             </div>
 
@@ -134,7 +177,7 @@
                                         <div class="modal-body">
                                             <input type="hidden" name="comment" value="{{$comment->comment_id}}">
                                             <input type="hidden" name="id" value="{{$book_name->book_id}}">
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" name="commentt" rows="3"></textarea>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" name="commentt" rows="3">{{$comment->comment_taxt}}</textarea>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="submit" class="btn btn-warning">แก้ไข</button>
@@ -170,40 +213,7 @@
 
 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <div class="col-md-12">
-                                    <div align="center">
-                                        <h5 class="modal-title" id="exampleModalLabel">ซื้อหนังสือเล่มนี้?</h5>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <form class="form-horizontal" method="GET" action="/stripe">
-                                {{ csrf_field() }}
-                                <div class="modal-body">
-                                    <div align="center">
-                                        {{ $book_name-> book_name }}
-                                        <br> ฿ {{ $book_name-> book_price }}
-                                        <input type="hidden" name="id" value="{{$book_name->book_id}}">
-                                        <input type="hidden" name="price" value="{{$book_name->book_price}}">
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <div class="col-md-12">
-                                        <div align="center">
-                                            <button type="submit" class="btn btn-success">ใช่</button>
-                                            <button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+               
 
                 <!-- /.row -->
                 @empty @endforelse @endsection @section('javascript') @endsection

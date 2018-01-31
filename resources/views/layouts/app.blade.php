@@ -11,9 +11,9 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Stylesd -->
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-<link rel="stylesheet" href="fontawesome-stars.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 
@@ -40,7 +40,7 @@
 
 
     body { 
-      background: url('{{asset("bg.jpg")}}') no-repeat center center fixed; 
+      background: url('{{asset("rainbow_pastel.jpg")}}') no-repeat center center fixed; 
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -52,7 +52,9 @@
     font-family: SukhumvitSet-SemiBold;
 
     } 
-
+    .checked {
+      color: orange;
+  }
 
 
     h3{
@@ -65,7 +67,7 @@
   }
 
   .book_detail h4{
-    color: #ffff;
+    color: black;
     font-family: SukhumvitSet-SemiBold;
   
 
@@ -247,7 +249,7 @@
     
   </style>
    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
 <body >
     <div id="app">
@@ -265,7 +267,7 @@
                   <a class="nav-link" href="/">ออกใหม่ <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active ">
-                  <a class="nav-link" href="/changepass">โปรโมชั่น</a>
+                  <a class="nav-link" href="">โปรโมชั่น</a>
                 </li>
 
                 <li class="nav-item dropdown active">
@@ -281,18 +283,18 @@
                 </li>
                
                   <li class="nav-item active ">
-                    <a class="nav-link" href="/changepass">หนังสือของฉัน</a>
+                    <a class="nav-link" href="/mybook">หนังสือของฉัน</a>
                   </li>
                   <li class="nav-item active ">
-                    <a class="nav-link" href="/changepass">ผลงานของฉัน</a>
+                    <a class="nav-link" href="">ผลงานของฉัน</a>
                   </li>
                   
                
                   <li class="nav-item active ">
-                    <a class="nav-link" href="/changepass">User Guide</a>
+                    <a class="nav-link" href="">User Guide</a>
                   </li>
                   <li class="nav-item active ">
-                    <a class="nav-link" href="/changepass">ติดต่อเรา</a>
+                    <a class="nav-link" href="">ติดต่อเรา</a>
                   </li>
                 
             </ul>
@@ -341,12 +343,12 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+  
     <script
 			  src="https://code.jquery.com/jquery-3.2.1.slim.js"
 			  integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg="
               crossorigin="anonymous"></script>
-              <script src="jquery.rateyo.js"></script>
+      
               <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="{{ asset('js/app.js') }}"></script>

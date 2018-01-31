@@ -21,8 +21,8 @@ class ReadController extends Controller
 
     public function index(Request $request)
     {
-        $book=Books::where('book_id',$request->get('book_id'))->first();
-        return view('read',compact('book'));
+        $bookread=$request->get('book_id');
+        return view('read',compact('bookread'));
     }
 
     /**

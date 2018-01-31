@@ -1,26 +1,41 @@
-@extends('layouts.app')
-@section('content')
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+</head>
+<body>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h1 id="text">ระบบกำลังดำเนินการ</h1>
-            <div class="panel panel-default">
-                @if ($message = Session::get('success'))
-                <div class="custom-alerts alert alert-success fade in">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
-                    {!! $message !!}
-                </div>
-                <?php Session::forget('success');?>
-                @endif
-                @if ($message = Session::get('error'))
-                <div class="custom-alerts alert alert-danger fade in">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
-                    {!! $message !!}
-                </div>
-                <?php Session::forget('error');?>
-                @endif
+           
+                <center><h2>กำลังดำเนินการ</h2></center>
+
+                        <center> <div class="loader"></div></center>
+          
                
-                <div class="panel-body">
+             
                     <form class="form-horizontal" method="POST" id="payment-form" role="form" action="/stripe" >
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('card_no') ? ' has-error' : '' }}">
@@ -92,8 +107,6 @@
     </div>
 </div>
 
-@endsection
-@section('javascript')
 <script type="text/javascript">
     document.getElementById('payment-form').submit(); // SUBMIT FORM
 </script>
@@ -108,4 +121,6 @@
     } 
 </script>
 
-@endsection
+
+</body>
+</html>
