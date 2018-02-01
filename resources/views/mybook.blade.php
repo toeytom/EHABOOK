@@ -3,7 +3,7 @@
 <div class="row">
     @foreach($books as $book)
    
-   <div class="col-md-2">
+   <div class="col-md-2" style ="margin-left:20px">
     
 
     

@@ -18,16 +18,16 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-50" src="https://www.w3schools.com/bootstrap/chicago.jpg" alt="First slide">
+            <img class="d-block w-50" src="slid/1.jpg" alt="First slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-50" src="https://www.w3schools.com/bootstrap/ny.jpg" alt="Second slide">
+            <img class="d-block w-50" src="slid/2.jpg" alt="Second slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-50" src="https://www.w3schools.com/bootstrap/la.jpg" alt="Third slide">
+            <img class="d-block w-50" src="slid/3.jpg" alt="Third slide">
           </div>
           <div class="carousel-item">
-                <img class="d-block w-50" src="https://www.w3schools.com/bootstrap/la.jpg" alt="Third slide">
+                <img class="d-block w-50" src="slid/4.jpg" alt="Third slide">
               </div>
         </div>
       
@@ -77,9 +77,11 @@
         @endif
        @endfor
        <p></p>
+       
        <div id="buttonn">
-            <button type="submit" value="{{$book->book_id}}"class="btn btn-success">฿ {{$book->book_price}}</button> 
+          <a href="/detail?book={{$book->book_id}}"> <button type="submit" value="{{$book->book_id}}"class="btn btn-success">฿ {{$book->book_price}}</button> </a>
       </div>
+      
 <p></p>
     
   </div>
@@ -134,7 +136,7 @@
   @endfor
   <p></p>
   <div id="buttonn">
-    <button type="submit" value="{{$book->book_id}}"class="btn btn-success">฿ {{$book->book_price}}</button> 
+      <a href="/detail?book={{$book->book_id}}"><button type="submit" value="{{$book->book_id}}"class="btn btn-success">฿ {{$book->book_price}}</button> </a>
   </div>
 <p></p>
 
@@ -190,7 +192,7 @@
        @endfor
        <p></p>
        <div id="buttonn">
-        <button type="submit" value="{{$book->book_id}}"class="btn btn-success">฿ {{$book->book_price}}</button> 
+          <a href="/detail?book={{$book->book_id}}"><button type="submit" value="{{$book->book_id}}"class="btn btn-success">฿ {{$book->book_price}}</button></a>
        </div> 
 <p></p>
     

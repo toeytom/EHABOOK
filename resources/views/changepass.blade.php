@@ -4,7 +4,7 @@
   <div class="container">
         @if ($message = Session::get('success'))
                 <div class="alert alert-danger"id="alertf">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                    <button type="button" class=success"close" data-dismiss="alert" aria-hidden="true"></button>
                     {!! $message !!}
                 </div>
                 <?php Session::forget('success');?>
